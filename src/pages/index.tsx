@@ -9,11 +9,27 @@ import React, { useState } from "react";
 import { NumericFormat } from "react-number-format";
 import ReactSelect from "react-select";
 
-export default function index() {
+type RangeItem = {
+  [key: string]: {
+    min: string;
+    max: string;
+  };
+};
+
+type MonthOption = {
+  value: string;
+  label: string;
+};
+
+type MonthsData = {
+  months: MonthOption[];
+};
+
+export default function Index() {
   const [filter, setFilter] = useState<string>("");
   const [type, setType] = useState<string>("car");
   const [rangeValue, setRangeValue] = useState<number>(20000000);
-  const [ranges, setRanges] = useState<any>([
+  const ranges: RangeItem[] = [
     {
       car: {
         min: "20000000",
@@ -26,9 +42,9 @@ export default function index() {
         max: "40000000",
       },
     },
-  ]);
+  ];
   const [idx, setIdx] = useState<number>(0);
-  const [list, setList] = useState<any>({
+  const [list, setList] = useState<MonthsData>({
     months: [
       {
         value: "12",
@@ -54,6 +70,7 @@ export default function index() {
       <div className="relative">
         <div>
           <img
+            alt="banner"
             src="/images/banner4.png"
             className="w-full h-auto absolute top-0 z-0"
           />
@@ -268,8 +285,8 @@ export default function index() {
                         thousandSeparator="."
                         decimalSeparator=","
                         // disabled
-                        onValueChange={(value: any) =>
-                          setRangeValue(value?.floatValue)
+                        onValueChange={(value: {floatValue?: number}) =>
+                          setRangeValue(value?.floatValue ?? 0)
                         }
                         prefix="Rp "
                         decimalScale={0}

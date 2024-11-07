@@ -1,13 +1,12 @@
 import { usePathname } from "next/navigation";
 import React from "react";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
 const poppinsRegular = Poppins({ weight: "500", subsets: ["latin"] });
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
 export default function Navbar() {
-  let navs = [
+  const navs = [
     {
       name: "Beranda",
       href: "/",
@@ -39,10 +38,14 @@ export default function Navbar() {
   return (
     <div className="bg-white shadow md:h-[70px] w-full items-center px-20 flex fixed z-10 top-0">
       <div>
-        <img src="/images/logo_full2.png" className="md:w-[100px] h-auto" />
+        <img
+          src="/images/logo_full2.png"
+          alt="logo"
+          className="md:w-[100px] h-auto"
+        />
       </div>
       <div className="flex gap-10 md:ml-48">
-        {navs?.map((val: any, i: number) => (
+        {navs?.map((val: { name: string; href: string }, i: number) => (
           <a
             key={i}
             className={`uppercase transition-all text-sm duration-200 font-sans ${
