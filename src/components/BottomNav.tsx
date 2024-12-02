@@ -4,12 +4,12 @@ import React from "react";
 
 export default function BottomNav() {
   return (
-    <div className="h-[50vh] w-full shadow bg-green-700 py-5 px-20 flex justify-between items-start">
+    <div className="lg:h-[50vh] h-auto w-full shadow bg-green-700 py-5 lg:px-20 px-2 flex lg:flex-row flex-col justify-between items-start">
       <div className="w-full pt-5">
         <img
           src="/images/logo_full2.png"
           alt="logo"
-          className="md:w-[300px] h-auto"
+          className="lg:w-[300px] w-[200px] h-auto"
         />
       </div>
       <div className="w-full">
@@ -52,7 +52,7 @@ export default function BottomNav() {
 
         <button className="mt-5 flex gap-2 items-start text-left">
           <MapPinIcon className="w-5" />
-          <p className="w-[300px]">
+          <p className="lg:w-[300px] w-auto">
             Kp. Mekarsari No 09 Kel. Baleendah Kec. Baleendah Kab. Bandung Jawa
             Barat 40229
           </p>

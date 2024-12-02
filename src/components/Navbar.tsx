@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { Poppins } from "next/font/google";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 
@@ -7,6 +7,7 @@ const poppinsRegular = Poppins({ weight: "500", subsets: ["latin"] });
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
 export default function Navbar() {
+  const [show, setShow] = useState<boolean>(false);
   const navs = [
     {
       name: "Beranda",
@@ -80,10 +81,19 @@ export default function Navbar() {
             />
           </div>
           <div className="absolute top-4 right-4">
-            <button onClick={()=>alert("tes")}>
-              <Bars3Icon className="text-black w-10"/>
+            <button onClick={() => setShow(!show)}>
+              <Bars3Icon className="text-black w-10" />
             </button>
           </div>
+          {show ? <div className="px-2 w-full absolute top-20">
+            <div className="bg-white w-full h-[50vh] rounded p-5 flex flex-col gap-3">
+              <a className="text-black text-xl">Home</a>
+              <a className="text-black text-xl">Produk</a>
+              <a className="text-black text-xl">Tentang Kami</a>
+              <a className="text-black text-xl">Kebijakan Privasi</a>
+              <a className="text-black text-xl">Ketentuan Pengguna</a>
+            </div>
+          </div> : ""}
         </div>
       </div>
     </div>
