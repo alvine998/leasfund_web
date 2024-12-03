@@ -13,7 +13,7 @@ import {
   UserPlusIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NumericFormat } from "react-number-format";
 import ReactSelect from "react-select";
 import { Poppins } from "next/font/google";
@@ -76,9 +76,6 @@ export default function Index() {
       },
     ],
   });
-
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
   const descData = [
     {
       id: 1,
