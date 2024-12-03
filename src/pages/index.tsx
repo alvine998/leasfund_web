@@ -18,7 +18,6 @@ import { NumericFormat } from "react-number-format";
 import ReactSelect from "react-select";
 import { Poppins } from "next/font/google";
 import Steps from "@/components/Steps";
-import axios from "axios";
 
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
