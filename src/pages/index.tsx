@@ -84,13 +84,13 @@ export default function Index() {
       id: 1,
       children: [
         {
-          icon: <ArrowDownTrayIcon className="text-green-500 w-10" />,
+          icon: <ArrowDownTrayIcon className="text-green-500 lg:w-10 w-20" />,
           title: "1. Download Aplikasi Leasfund di PlayStore",
           description:
             "Anda dapat mendownload aplikasi Leasfund menggunakan android di Playstore.",
         },
         {
-          icon: <UserPlusIcon className="text-green-500 w-10" />,
+          icon: <UserPlusIcon className="text-green-500 lg:w-10 w-20" />,
           title: "2. Registrasi Akun",
           description:
             "Siapkan data diri anda untuk melakukan registrasi akun.",
@@ -101,13 +101,13 @@ export default function Index() {
       id: 2,
       children: [
         {
-          icon: <ClipboardDocumentListIcon className="text-green-500 w-10" />,
+          icon: <ClipboardDocumentListIcon className="text-green-500 lg:w-10 w-20" />,
           title: "3. Tambah Prospek",
           description:
             "Klik tambah prospek untuk menambah nasabah yang akan diajukan formulirnya.",
         },
         {
-          icon: <PaperAirplaneIcon className="text-green-500 w-10" />,
+          icon: <PaperAirplaneIcon className="text-green-500 lg:w-10 w-20" />,
           title: "4. Verifikasi Data Prospek",
           description:
             "Admin akan melakukan verifikasi pada data nasabah dan akan meneruskannya ke leasing yang dipilih",
@@ -118,13 +118,13 @@ export default function Index() {
       id: 3,
       children: [
         {
-          icon: <CheckBadgeIcon className="text-green-500 w-10" />,
+          icon: <CheckBadgeIcon className="text-green-500 lg:w-10 w-20" />,
           title: "5. Data Disetujui dan Pencairan",
           description:
             "Setelah data disetujui silahkan menunggu pencairan dana langsung dari pihak leasing.",
         },
         {
-          icon: <CurrencyDollarIcon className="text-green-500 w-10" />,
+          icon: <CurrencyDollarIcon className="text-green-500 lg:w-10 w-20" />,
           title: "6. Pencairan Komisi",
           description:
             "Komisi akan cair dalam 1 x 24 jam langsung ke akun Agen Leasfund.",
@@ -132,16 +132,6 @@ export default function Index() {
       ],
     },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 700); // Adjust `50` as needed for your threshold
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   // const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // const toggleDropdown = () => setIsOpen(!isOpen);
@@ -150,7 +140,7 @@ export default function Index() {
     <div className="w-full">
       <Navbar />
       {/* Section 1 */}
-      <div className="bg-[url('/images/banner4.png')] lg:w-full w-auto h-[100vh] lg:h-[120vh] lg:-mt-20 mt-[70px] lg:pt-[200px] pt-20">
+      <div className="bg-[url('/images/banner4.png')] lg:w-full w-auto h-[100vh] lg:h-[120vh] lg:-mt-20 mt-[70px] lg:pt-[200px] pt-20 lg:px-0 px-10">
         <h2 className="text-4xl font-semibold lg:w-[450px] w-full">
           Solusi Dana Tunai Cepat dengan Jaminan BPKB.
         </h2>
@@ -166,19 +156,15 @@ export default function Index() {
       {/* Section 2 */}
       <div className="bg-white h-[100vh] w-full lg:px-10 px-4 flex lg:flex-row flex-col justify-center items-center">
         <h2
-          className={`lg:mt-0 mt-40 text-4xl w-full font-semibold lg:opacity-100 text-center duration-500 transition-opacity text-green-700 ${
-            isScrolled ? "opacity-0" : "opacity-100"
-          }`}
+          className={`lg:-mt-0 -mt-10 text-4xl w-full font-semibold text-center duration-500 transition-opacity text-green-700`}
         >
           Layanan Leasfund
         </h2>
         <div
-          className={`lg:-mt-0 -mt-40 duration-500 transition-opacity lg:opacity-100 w-full ${
-            isScrolled ? "opacity-100" : "opacity-0"
-          }`}
+          className={`lg:-mt-0 mt-5 duration-500 transition-opacity w-full`}
         >
-          {filter == "" && (
-            <div>
+          {filter == "" ? (
+            <div className="w-full">
               <h5 className="lg:text-2xl text-xl text-black">
                 Solusi Mudah, Cepat, dan Aman untuk kebutuhan finansial Anda
               </h5>
@@ -191,7 +177,7 @@ export default function Index() {
               </p>
               <div className="flex lg:flex-row flex-col gap-2 mt-4">
                 <Link href={"/branch"}>
-                  <button className="p-2 border shadow-lg rounded-lg flex gap-2 items-center hover:-mt-2 mt-0 duration-200 transition-all">
+                  <button className="p-2 border shadow-lg rounded-lg flex gap-2 items-center hover:-mt-2 mt-0 duration-200 transition-all w-full">
                     <BuildingOffice2Icon className="w-14 text-green-600" />
                     <h5 className="text-black">Kantor Cabang</h5>
                   </button>
@@ -201,22 +187,24 @@ export default function Index() {
                   onClick={() => {
                     setFilter("simulation");
                   }}
-                  className="p-2 border shadow-lg rounded-lg gap-2 flex items-center hover:-mt-2 mt-0 duration-200 transition-all"
+                  className="p-2 border shadow-lg rounded-lg gap-2 flex items-center hover:-mt-2 mt-0 duration-200 transition-all w-full"
                 >
                   <CalculatorIcon className="w-14 text-green-600" />
                   <h5 className="text-black">Simulasi Kredit</h5>
                 </button>
                 <Link href={`https://wa.me/6285863953727`}>
-                  <button className="p-2 border shadow-lg rounded-lg gap-2 flex items-center hover:-mt-2 mt-0 duration-200 transition-all">
+                  <button className="p-2 border shadow-lg rounded-lg gap-2 flex items-center hover:-mt-2 mt-0 duration-200 transition-all w-full">
                     <PhoneIcon className="w-14 text-green-600" />
                     <h5 className="text-black">Customer Care</h5>
                   </button>
                 </Link>
               </div>
             </div>
+          ) : (
+            ""
           )}
 
-          {filter == "simulation" && (
+          {filter == "simulation" ? (
             <div className="mt-4 w-full">
               <button
                 className="border rounded w-full py-2 px-4 text-black shadow"
@@ -443,6 +431,8 @@ export default function Index() {
                 </div>
               </div>
             </div>
+          ) : (
+            ""
           )}
         </div>
       </div>
@@ -488,7 +478,7 @@ export default function Index() {
         </div>
       </div>
       {/* Section 4 */}
-      <div className="bg-white w-full h-auto lg:py-10 lg:p-10">
+      <div className="bg-white w-full h-auto lg:py-10 py-5 px-5 lg:p-10">
         <h2 className="text-center text-xl font-bold text-black">
           Langkah-Langkah Menjadi Agen{" "}
           <strong className="text-green-600">Leasfund</strong> dan Mendapatkan
@@ -500,39 +490,41 @@ export default function Index() {
       </div>
       {/* Section 5 */}
       <div className="bg-white w-full lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center relative">
-        <h2 className={`${poppinsBold} text-black text-lg text-center font-bold`}>
+        <h2
+          className={`${poppinsBold} text-black text-lg text-center font-bold`}
+        >
           MITRA
         </h2>
-        <div className="w-full flex gap-2 justify-center items-center">
+        <div className="w-full flex flex-wrap gap-2 justify-center items-center">
           <img
             src="/images/logo_full2.png"
             alt="logo"
-            className="lg:w-[100px] w-[50px] h-auto animate-runLoop"
+            className="lg:w-[100px] w-[80px] h-auto"
           />
           <img
             src="/images/logo_full2.png"
             alt="logo"
-            className="lg:w-[100px] w-[50px] h-auto animate-runLoop"
+            className="lg:w-[100px] w-[80px] h-auto"
           />
           <img
             src="/images/logo_full2.png"
             alt="logo"
-            className="lg:w-[100px] w-[50px] h-auto animate-runLoop"
+            className="lg:w-[100px] w-[80px] h-auto"
           />
           <img
             src="/images/logo_full2.png"
             alt="logo"
-            className="lg:w-[100px] w-[50px] h-auto animate-runLoop"
+            className="lg:w-[100px] w-[80px] h-auto"
           />
           <img
             src="/images/logo_full2.png"
             alt="logo"
-            className="lg:w-[100px] w-[50px] h-auto animate-runLoop"
+            className="lg:w-[100px] w-[80px] h-auto"
           />
           <img
             src="/images/logo_full2.png"
             alt="logo"
-            className="lg:w-[100px] w-[50px] h-auto animate-runLoop"
+            className="lg:w-[100px] w-[80px] h-auto"
           />
         </div>
       </div>

@@ -8,11 +8,11 @@ export default function Steps({ data }: Props) {
   return (
     <div>
       {data?.map((v: any, i: number) => (
-        <div className="flex lg:flex-row gap-4 lg:px-20 mt-4 items-center justify-center" key={i}>
+        <div className="flex lg:flex-row flex-col gap-4 lg:px-20 mt-4 items-center justify-center" key={i}>
           {v?.children?.map((val: any, idx: number) => (
             <div
               key={idx}
-              className="bg-white rounded lg:h-[120px] shadow lg:py-6 lg:px-6 w-full flex lg:flex-row gap-5 items-start justify-start"
+              className="bg-white rounded lg:h-[120px] h-auto shadow lg:py-6 lg:px-6 p-6 w-full flex lg:flex-row gap-5 items-start justify-start"
             >
               {val?.icon}
               <div>

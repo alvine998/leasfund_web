@@ -87,11 +87,11 @@ export default function Navbar() {
           </div>
           {show ? <div className="px-2 w-full absolute top-20">
             <div className="bg-white w-full h-[50vh] rounded p-5 flex flex-col gap-3">
-              <a className="text-black text-xl">Home</a>
-              <a className="text-black text-xl">Produk</a>
-              <a className="text-black text-xl">Tentang Kami</a>
-              <a className="text-black text-xl">Kebijakan Privasi</a>
-              <a className="text-black text-xl">Ketentuan Pengguna</a>
+              <a className={`text-black text-xl ${pathname == "/" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Home</a>
+              <a className={`text-black text-xl ${pathname == "product" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Produk</a>
+              <a className={`text-black text-xl ${pathname == "aboutus" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Tentang Kami</a>
+              <a className={`text-black text-xl ${pathname == "privacy" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Kebijakan Privasi</a>
+              <a className={`text-black text-xl ${pathname == "term" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Ketentuan Pengguna</a>
             </div>
           </div> : ""}
         </div>
