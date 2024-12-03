@@ -2,15 +2,23 @@ import BottomNav from "@/components/BottomNav";
 import Navbar from "@/components/Navbar";
 import { toMoney } from "@/utils/utils";
 import {
+  ArrowDownTrayIcon,
   BuildingOffice2Icon,
   CalculatorIcon,
+  CheckBadgeIcon,
+  ClipboardDocumentListIcon,
+  CurrencyDollarIcon,
+  PaperAirplaneIcon,
   PhoneIcon,
+  UserPlusIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { NumericFormat } from "react-number-format";
 import ReactSelect from "react-select";
 import { Poppins } from "next/font/google";
+import Steps from "@/components/Steps";
+import axios from "axios";
 
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
@@ -71,6 +79,60 @@ export default function Index() {
   });
 
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const descData = [
+    {
+      id: 1,
+      children: [
+        {
+          icon: <ArrowDownTrayIcon className="text-green-500 w-10" />,
+          title: "1. Download Aplikasi Leasfund di PlayStore",
+          description:
+            "Anda dapat mendownload aplikasi Leasfund menggunakan android di Playstore.",
+        },
+        {
+          icon: <UserPlusIcon className="text-green-500 w-10" />,
+          title: "2. Registrasi Akun",
+          description:
+            "Siapkan data diri anda untuk melakukan registrasi akun.",
+        },
+      ],
+    },
+    {
+      id: 2,
+      children: [
+        {
+          icon: <ClipboardDocumentListIcon className="text-green-500 w-10" />,
+          title: "3. Tambah Prospek",
+          description:
+            "Klik tambah prospek untuk menambah nasabah yang akan diajukan formulirnya.",
+        },
+        {
+          icon: <PaperAirplaneIcon className="text-green-500 w-10" />,
+          title: "4. Verifikasi Data Prospek",
+          description:
+            "Admin akan melakukan verifikasi pada data nasabah dan akan meneruskannya ke leasing yang dipilih",
+        },
+      ],
+    },
+    {
+      id: 3,
+      children: [
+        {
+          icon: <CheckBadgeIcon className="text-green-500 w-10" />,
+          title: "5. Data Disetujui dan Pencairan",
+          description:
+            "Setelah data disetujui silahkan menunggu pencairan dana langsung dari pihak leasing.",
+        },
+        {
+          icon: <CurrencyDollarIcon className="text-green-500 w-10" />,
+          title: "6. Pencairan Komisi",
+          description:
+            "Komisi akan cair dalam 1 x 24 jam langsung ke akun Agen Leasfund.",
+        },
+      ],
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -383,52 +445,42 @@ export default function Index() {
               </div>
             </div>
           )}
-
-          {/* <button className="bg-orange-500 text-white py-2 px-4 rounded mt-2 hover:bg-orange-600 duration-200">
-                Cek Simulasi
-              </button> */}
         </div>
       </div>
       {/* Section 3 */}
       <div className="bg-gray-200 w-full h-[100vh] lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center">
         <h2 className={`${poppinsBold} text-black text-4xl text-center`}>
-          Mengapa Leasfund ?
+          Mengapa Harus Leasfund ?
         </h2>
         <div className="flex flex-wrap gap-4 mt-5">
-          <div className="border-green-300 lg:h-[50vh] h-auto lg:w-[250px] w-full bg-green-200 hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
-            <h2 className="text-gray-700 text-xl">
+          <div className="border-green-300 lg:h-[50vh] h-auto lg:w-[300px] w-full bg-green-600 hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
+            <h2 className="text-white text-xl font-bold">
               Semua data diproses secara online
             </h2>
+            <p className="text-white mt-2">
+              Proses digital tanpa kertas termasuk fitur-fitur seperti
+              verifikasi panggilan, penyerahan dokumen secara daring, dll.
+            </p>
+          </div>
+
+          <div className="border-blue-300 lg:h-[50vh] h-auto lg:w-[300px] w-full bg-white hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
+            <h2 className="text-gray-700 text-xl font-bold">Syarat Mudah</h2>
             <p className="text-gray-700 mt-2">
               Proses digital tanpa kertas termasuk fitur-fitur seperti
               verifikasi panggilan, penyerahan dokumen secara daring, dll.
             </p>
           </div>
 
-          <div className="border-blue-300 lg:h-[50vh] h-auto lg:w-[250px] w-full bg-blue-200 hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
-            <h2 className="text-gray-700 text-xl">
-              Semua data diproses secara online
-            </h2>
-            <p className="text-gray-700 mt-2">
+          <div className="border-orange-300 lg:h-[50vh] h-auto lg:w-[300px] w-full bg-green-600 hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
+            <h2 className="text-white text-xl font-bold">Proses Cepat</h2>
+            <p className="text-white mt-2">
               Proses digital tanpa kertas termasuk fitur-fitur seperti
               verifikasi panggilan, penyerahan dokumen secara daring, dll.
             </p>
           </div>
 
-          <div className="border-orange-300 lg:h-[50vh] h-auto lg:w-[250px] w-full bg-orange-200 hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
-            <h2 className="text-gray-700 text-xl">
-              Semua data diproses secara online
-            </h2>
-            <p className="text-gray-700 mt-2">
-              Proses digital tanpa kertas termasuk fitur-fitur seperti
-              verifikasi panggilan, penyerahan dokumen secara daring, dll.
-            </p>
-          </div>
-
-          <div className="border-red-300 lg:h-[50vh] h-auto lg:w-[250px] w-full bg-red-200 hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
-            <h2 className="text-gray-700 text-xl">
-              Semua data diproses secara online
-            </h2>
+          <div className="border-red-300 lg:h-[50vh] h-auto lg:w-[300px] w-full bg-white hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer">
+            <h2 className="text-gray-700 text-xl font-bold">Komisi Tinggi</h2>
             <p className="text-gray-700 mt-2">
               Proses digital tanpa kertas termasuk fitur-fitur seperti
               verifikasi panggilan, penyerahan dokumen secara daring, dll.
@@ -437,8 +489,19 @@ export default function Index() {
         </div>
       </div>
       {/* Section 4 */}
+      <div className="bg-white w-full h-auto lg:py-10 lg:p-10">
+        <h2 className="text-center text-xl font-bold text-black">
+          Langkah-Langkah Menjadi Agen{" "}
+          <strong className="text-green-600">Leasfund</strong> dan Mendapatkan
+          Komisi
+        </h2>
+        <div className="mt-8">
+          <Steps data={descData} />
+        </div>
+      </div>
+      {/* Section 5 */}
       <div className="bg-white w-full lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center relative">
-        <h2 className={`${poppinsBold} text-black text-lg text-center`}>
+        <h2 className={`${poppinsBold} text-black text-lg text-center font-bold`}>
           MITRA
         </h2>
         <div className="w-full flex gap-2 justify-center items-center">
