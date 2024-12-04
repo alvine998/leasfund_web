@@ -2,6 +2,7 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { Poppins } from "next/font/google";
 import { Bars3Icon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 const poppinsRegular = Poppins({ weight: "500", subsets: ["latin"] });
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
@@ -85,15 +86,58 @@ export default function Navbar() {
               <Bars3Icon className="text-black w-10" />
             </button>
           </div>
-          {show ? <div className="px-2 w-full absolute top-20">
-            <div className="bg-white w-full h-[50vh] rounded p-5 flex flex-col gap-3">
-              <a className={`text-black text-xl ${pathname == "/" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Home</a>
-              <a className={`text-black text-xl ${pathname == "product" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Produk</a>
-              <a className={`text-black text-xl ${pathname == "aboutus" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Tentang Kami</a>
-              <a className={`text-black text-xl ${pathname == "privacy" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Kebijakan Privasi</a>
-              <a className={`text-black text-xl ${pathname == "term" ? "p-2 text-white bg-green-500 rounded" : ""}`}>Ketentuan Pengguna</a>
+          {show ? (
+            <div className="px-2 w-full absolute top-20">
+              <div className="bg-white w-full h-[50vh] rounded p-5 flex flex-col gap-3">
+                <Link href={"/"}>
+                  <p
+                    className={`text-black text-xl ${
+                      pathname == "/"
+                        ? "p-2 text-white bg-green-500 rounded"
+                        : ""
+                    }`}
+                  >
+                    Home
+                  </p>
+                </Link>
+                <Link href={"/aboutus"}>
+                  <p
+                    className={`text-black text-xl ${
+                      pathname == "/aboutus"
+                        ? "p-2 text-white bg-green-500 rounded"
+                        : ""
+                    }`}
+                  >
+                    Tentang Kami
+                  </p>
+                </Link>
+                <Link href={"/privacy"}>
+                  <p
+                    className={`text-black text-xl ${
+                      pathname == "/privacy"
+                        ? "p-2 text-white bg-green-500 rounded"
+                        : ""
+                    }`}
+                  >
+                    Kebijakan Privasi
+                  </p>
+                </Link>
+                <Link href={"/term"}>
+                  <p
+                    className={`text-black text-xl ${
+                      pathname == "/term"
+                        ? "p-2 text-white bg-green-500 rounded"
+                        : ""
+                    }`}
+                  >
+                    Ketentuan Pengguna
+                  </p>
+                </Link>
+              </div>
             </div>
-          </div> : ""}
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
