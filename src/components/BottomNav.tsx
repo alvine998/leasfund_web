@@ -5,7 +5,7 @@ import React from "react";
 export default function BottomNav() {
   return (
     <div className="lg:h-[50vh] h-auto w-full shadow bg-green-700 py-5 lg:px-20 px-2 flex lg:flex-row flex-col justify-between items-start">
-      <div className="w-full pt-5 flex lg:justify-start justify-center items-center">
+      <div className="w-full pt-5 lg:flex hidden lg:justify-start justify-center items-center">
         <img
           src="/images/logo_full2.png"
           alt="logo"
@@ -19,10 +19,10 @@ export default function BottomNav() {
             <Link href={"/aboutus"}>Tentang Kami</Link>
           </li>
           <li className="list-disc mt-2 hover:underline">
-            <Link href={"/product/car"}>Produk Mobil</Link>
+            <Link href={"/product/digital-leasing"}>Digital Leasing</Link>
           </li>
           <li className="list-disc mt-2 hover:underline">
-            <Link href={"/product/motor"}>Produk Motor</Link>
+            <Link href={"/product/personal-loan"}>Personal Loan</Link>
           </li>
           <li className="list-disc mt-2 hover:underline">
             <Link href={"/privacy"}>Kebijakan Privasi</Link>

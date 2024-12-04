@@ -21,6 +21,9 @@ const config: Config = {
           '100%': { transform: 'translateX(-100%)' },
         },
       },
+      maxHeight: {
+        128: '32rem', // Add larger max-height if needed
+      },
     },
   },
   plugins: [],

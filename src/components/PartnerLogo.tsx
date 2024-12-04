@@ -85,6 +85,11 @@ export default function PartnerLogo() {
           alt="logo"
           className="lg:w-[100px] w-[80px] h-auto"
         />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW1K1GdyX35MjnIPnSmvsdX2gi8Uh4MH0GSg&s"
+          alt="logo"
+          className="lg:w-[100px] w-[80px] h-auto"
+        />
       </div>
     </div>
   );

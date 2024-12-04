@@ -6,24 +6,24 @@ const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 export default function Benefit() {
   const benefits: any[] = [
     {
-      title: "Data diproses secara online",
+      title: "Layanan Profesional",
       description:
-        "Proses digital tanpa kertas termasuk fitur-fitur seperti verifikasi panggilan, penyerahan dokumen secara daring, dll.",
+        "Tim kami siap membantu Anda dengan solusi finansial terbaik.",
     },
     {
       title: "Syarat Mudah",
       description:
-        "Proses digital tanpa kertas termasuk fitur-fitur seperti verifikasi panggilan, penyerahan dokumen secara daring, dll.",
+        "Syarat mudah cukup KTP, STNK, & BPKB",
     },
     {
       title: "Proses Cepat",
       description:
-        "Proses digital tanpa kertas termasuk fitur-fitur seperti verifikasi panggilan, penyerahan dokumen secara daring, dll.",
+        "Semua pengajuan dilakukan secara online untuk kenyamanan Anda.",
     },
     {
-      title: "Komisi Tinggi",
+      title: "Fleksibel & Transparan",
       description:
-        "Proses digital tanpa kertas termasuk fitur-fitur seperti verifikasi panggilan, penyerahan dokumen secara daring, dll.",
+        "Pilihan tenor dan suku bunga yang disesuaikan tanpa biaya tersembunyi.",
     },
   ];
   return (
@@ -40,7 +40,7 @@ export default function Benefit() {
                 idx % 2 == 0
                   ? "border-blue-300 bg-white"
                   : "border-green-300 bg-green-600"
-              } lg:h-[50vh] h-auto lg:w-[300px] w-full hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer`}
+              } lg:h-[20vh] h-auto lg:w-[300px] w-full hover:-mt-2 mt-0 duration-300 transition-all shadow p-2 rounded lg:px-10 lg:py-5 cursor-pointer`}
             >
               <h2
                 className={`${

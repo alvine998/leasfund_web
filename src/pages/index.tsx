@@ -136,10 +136,10 @@ export default function Index() {
       <Navbar />
       {/* Section 1 */}
       <div className="bg-[url('/images/banner4.png')] lg:w-full w-auto h-[100vh] lg:h-[120vh] lg:-mt-20 mt-[70px] lg:pt-[200px] pt-20 lg:px-0 px-10">
-        <h2 className="text-4xl font-semibold lg:w-[450px] w-full">
-          Solusi Dana Tunai Cepat dengan Jaminan BPKB.
+        <h2 className="text-3xl font-semibold lg:w-[450px] w-full text-green-700">
+          Solusi Dana Cepat Jaminan BPKB.
         </h2>
-        <p className="text-xl lg:mt-4 mt-2 lg:w-[500px] w-full">
+        <p className="text-md lg:mt-4 mt-2 lg:w-[500px] w-full">
           <strong>Leasfund</strong> adalah mitra keuangan anda yang dapat
           diandalkan, menyediakan solusi dana tunai yang cepat dan mudah dengan
           menggunakan BPKB motor dan mobil.
@@ -158,6 +158,10 @@ export default function Index() {
         <Countdown />
       </div> */}
       {/* Section 2 */}
+      <div className="bg-gray-200 w-full h-[100vh] lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center">
+        <Benefit />
+      </div>
+      {/* Section 3 */}
       <div className="bg-white h-[100vh] w-full lg:px-10 px-4 flex lg:flex-row flex-col justify-center items-center">
         <h2
           className={`lg:-mt-0 -mt-10 text-4xl w-full font-semibold text-center duration-500 transition-opacity text-green-700`}
@@ -184,10 +188,6 @@ export default function Index() {
             ""
           )}
         </div>
-      </div>
-      {/* Section 3 */}
-      <div className="bg-gray-200 w-full h-[100vh] lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center">
-        <Benefit />
       </div>
       {/* Section 4 */}
       <div className="bg-white w-full h-auto lg:py-10 py-5 px-5 lg:p-10">

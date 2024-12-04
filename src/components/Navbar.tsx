@@ -133,6 +133,17 @@ export default function Navbar() {
                     Ketentuan Pengguna
                   </p>
                 </Link>
+                <Link href={"/teamwork"}>
+                  <p
+                    className={`text-black text-xl ${
+                      pathname == "/teamwork"
+                        ? "p-2 text-white bg-green-500 rounded"
+                        : ""
+                    }`}
+                  >
+                    Kerjasama
+                  </p>
+                </Link>
               </div>
             </div>
           ) : (

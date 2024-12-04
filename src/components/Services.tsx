@@ -17,11 +17,10 @@ export default function Services({ setFilter }: Props) {
         Solusi Mudah, Cepat, dan Aman untuk kebutuhan finansial Anda
       </h5>
       <p className="mt-4 text-justify text-black lg:text-md text-sm">
-        Untuk Anda, Kreditplus menyediakan berbagai macam produk dan layanan
-        keuangan. Produk dan layanan kami termasuk pembiayaan untuk kebutuhan
-        produk elektronik dan furniture Anda, penyediaan kredit multi guna dan
-        modal usaha untuk solusi kebutuhan dana Anda, serta produk keuangan
-        berbasis teknologi terkini.
+        Leasfund adalah solusi digital terpercaya untuk kebutuhan pembiayaan
+        Anda. Kami menyediakan layanan leasing dan pinjaman pribadi yang
+        dirancang untuk mendukung berbagai kebutuhan finansial Anda dengan
+        proses yang cepat, transparan, dan fleksibel.
       </p>
       <div className="flex lg:flex-row flex-col gap-2 mt-4">
         <Link href={"/branch"}>
