@@ -15,6 +15,7 @@ import Benefit from "@/components/Benefit";
 import Simulation from "@/components/Simulation";
 import Services from "@/components/Services";
 import Countdown from "@/components/Countdown";
+import Link from "next/link";
 
 type RangeItem = {
   [key: string]: {
@@ -143,14 +144,19 @@ export default function Index() {
           diandalkan, menyediakan solusi dana tunai yang cepat dan mudah dengan
           menggunakan BPKB motor dan mobil.
         </p>
-        <button className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200">
-          Ajukan Sekarang
-        </button>
+        <Link href={"https://whatsform.com/7yblz0"}>
+          <button
+            type="button"
+            className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200"
+          >
+            Ajukan Sekarang
+          </button>
+        </Link>
       </div>
       {/* Countdown */}
-      <div>
+      {/* <div>
         <Countdown />
-      </div>
+      </div> */}
       {/* Section 2 */}
       <div className="bg-white h-[100vh] w-full lg:px-10 px-4 flex lg:flex-row flex-col justify-center items-center">
         <h2
