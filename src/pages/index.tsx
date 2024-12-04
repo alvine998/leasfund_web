@@ -14,6 +14,7 @@ import PartnerLogo from "@/components/PartnerLogo";
 import Benefit from "@/components/Benefit";
 import Simulation from "@/components/Simulation";
 import Services from "@/components/Services";
+import Countdown from "@/components/Countdown";
 
 type RangeItem = {
   [key: string]: {
@@ -145,6 +146,10 @@ export default function Index() {
         <button className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200">
           Ajukan Sekarang
         </button>
+      </div>
+      {/* Countdown */}
+      <div>
+        <Countdown />
       </div>
       {/* Section 2 */}
       <div className="bg-white h-[100vh] w-full lg:px-10 px-4 flex lg:flex-row flex-col justify-center items-center">

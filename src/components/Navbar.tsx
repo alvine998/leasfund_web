@@ -74,13 +74,13 @@ export default function Navbar() {
 
       <div className="lg:hidden block">
         <div className="bg-white shadow h-[70px] w-full items-center justify-center flex fixed z-10 top-0">
-          <div>
+          <Link href={"/"}>
             <img
               src="/images/logo_full2.png"
               alt="logo"
               className="w-[100px] h-auto"
             />
-          </div>
+          </Link>
           <div className="absolute top-4 right-4">
             <button onClick={() => setShow(!show)}>
               <Bars3Icon className="text-black w-10" />

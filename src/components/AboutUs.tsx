@@ -5,14 +5,22 @@ export default function AboutUs() {
   return (
     <div className="bg-white w-full p-2">
       <p className="text-black text-justify">
-        Berdiri pada tahun 2023 dengan kantor pusat di Bandung merupakan
-        perusahaan teknologi yang membantu pertumbuhan bisnis melalui SaaS yang
-        inovatif dan menghubungkanklien dengan konsumen secara digital dan
-        langsung.
+        Leasfund adalah platform pembiayaan aggregator dana tunai BPKB yang
+        hadir untuk memberikan solusi finansial terbaik bagi masyarakat. Kami
+        berperan sebagai jembatan antara calon nasabah dan perusahaan pembiayaan
+        resmi yang terdaftar di OJK (Otoritas Jasa Keuangan).
       </p>
       <p className="text-black text-justify mt-2">
-        Misi utama kami adalah menghubungkan para ahli dan konsumen di seluruh
-        dunia untuk meningkatkan produktivitas dan kesuksesan mereka.
+        Dengan sistem berbasis teknologi yang inovatif, Leasfund memastikan
+        proses pengajuan pembiayaan menjadi lebih mudah, cepat, dan transparan.
+        Kami fokus pada layanan dengan agunan BPKB kendaraan (motor & mobil),
+        yang cocok untuk kebutuhan dana tunai yang fleksibel, baik untuk
+        keperluan usaha maupun kebutuhan pribadi.
+      </p>
+      <p className="text-black text-justify mt-2">
+        Leasfund didirikan pada tahun 2023, dengan visi menjadi solusi utama
+        pembiayaan berbasis teknologi di Indonesia. Kami berkomitmen untuk
+        memberikan pengalaman layanan keuangan yang nyaman dan dapat diandalkan.
       </p>
       <div className="mt-4">
         <PartnerLogo />
