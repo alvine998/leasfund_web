@@ -14,7 +14,7 @@ import PartnerLogo from "@/components/PartnerLogo";
 import Benefit from "@/components/Benefit";
 import Simulation from "@/components/Simulation";
 import Services from "@/components/Services";
-import Countdown from "@/components/Countdown";
+// import Countdown from "@/components/Countdown";
 import Link from "next/link";
 
 type RangeItem = {
