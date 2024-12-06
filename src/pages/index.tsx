@@ -1,12 +1,10 @@
 import BottomNav from "@/components/BottomNav";
 import Navbar from "@/components/Navbar";
 import {
-  ArrowDownTrayIcon,
-  CheckBadgeIcon,
+  ClipboardDocumentCheckIcon,
   ClipboardDocumentListIcon,
-  CurrencyDollarIcon,
-  PaperAirplaneIcon,
-  UserPlusIcon,
+  DocumentCurrencyDollarIcon,
+  PhoneIcon,
 } from "@heroicons/react/20/solid";
 import React, { useState } from "react";
 import Steps from "@/components/Steps";
@@ -77,16 +75,16 @@ export default function Index() {
       id: 1,
       children: [
         {
-          icon: <ArrowDownTrayIcon className="text-green-500 lg:w-10 w-20" />,
-          title: "1. Download Aplikasi Leasfund di PlayStore",
+          icon: <ClipboardDocumentListIcon className="text-green-500 lg:w-10 w-16" />,
+          title: "1. Isi Form Online",
           description:
-            "Anda dapat mendownload aplikasi Leasfund menggunakan android di Playstore.",
+            "Siapkan data jaminan BPKB Motor dan data diri Anda",
         },
         {
-          icon: <UserPlusIcon className="text-green-500 lg:w-10 w-20" />,
-          title: "2. Registrasi Akun",
+          icon: <PhoneIcon className="text-green-500 lg:w-10 w-20" />,
+          title: "2. Kami akan menghubungimu",
           description:
-            "Siapkan data diri anda untuk melakukan registrasi akun.",
+            "Anda akan dihubungi Call Center kami untuk konsultasi pinjaman dan tenor",
         },
       ],
     },
@@ -95,37 +93,20 @@ export default function Index() {
       children: [
         {
           icon: (
-            <ClipboardDocumentListIcon className="text-green-500 lg:w-10 w-20" />
+            <ClipboardDocumentCheckIcon className="text-green-500 lg:w-10 w-20" />
           ),
-          title: "3. Tambah Prospek",
+          title: "3. Survei dan Validasi Aset",
           description:
-            "Klik tambah prospek untuk menambah nasabah yang akan diajukan formulirnya.",
+            "kami akan lakukan survei dan cek aset untuk proses selanjutnya.",
         },
         {
-          icon: <PaperAirplaneIcon className="text-green-500 lg:w-10 w-20" />,
-          title: "4. Verifikasi Data Prospek",
+          icon: <DocumentCurrencyDollarIcon className="text-green-500 lg:w-10 w-20" />,
+          title: "4. Pencairan Dana",
           description:
-            "Admin akan melakukan verifikasi pada data nasabah dan akan meneruskannya ke leasing yang dipilih",
+            "Setelah survei dan disetujui, dana akan segera cair ke rekening Anda",
         },
       ],
-    },
-    {
-      id: 3,
-      children: [
-        {
-          icon: <CheckBadgeIcon className="text-green-500 lg:w-10 w-20" />,
-          title: "5. Data Disetujui dan Pencairan",
-          description:
-            "Setelah data disetujui silahkan menunggu pencairan dana langsung dari pihak leasing.",
-        },
-        {
-          icon: <CurrencyDollarIcon className="text-green-500 lg:w-10 w-20" />,
-          title: "6. Pencairan Komisi",
-          description:
-            "Komisi akan cair dalam 1 x 24 jam langsung ke akun Agen Leasfund.",
-        },
-      ],
-    },
+    }
   ];
   // const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -192,9 +173,7 @@ export default function Index() {
       {/* Section 4 */}
       <div className="bg-white w-full h-auto lg:py-10 py-5 px-5 lg:p-10">
         <h2 className="text-center text-xl font-bold text-black">
-          Langkah-Langkah Menjadi Agen{" "}
-          <strong className="text-green-600">Leasfund</strong> dan Mendapatkan
-          Komisi
+          Langkah-Langkah Mudah Pengajuan Pinjaman
         </h2>
         <div className="mt-8">
           <Steps data={descData} />
