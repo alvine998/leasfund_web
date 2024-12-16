@@ -135,7 +135,7 @@ export default function Index() {
         <AutoSlide images={images} />
       </div>
       {/* Section 1 */}
-      <div className="bg-white lg:w-full w-auto lg:-mt-20 mt-[70px] lg:pt-[200px] pt-20 pb-20 lg:px-20 px-10 flex lg:flex-row flex-col gap-10 justify-between items-end">
+      <div className="bg-white lg:w-full w-auto lg:-mt-20 mt-0 lg:pt-[200px] pt-20 pb-20 lg:px-20 px-10 flex lg:flex-row flex-col gap-10 justify-between items-end">
         <div className="w-full">
           <h2 className="text-3xl font-semibold text-green-700">
             Solusi Dana Cepat Jaminan BPKB.

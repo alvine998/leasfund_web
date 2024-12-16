@@ -38,7 +38,7 @@ const AutoSlide: React.FC<AutoSlideProps> = ({ images }) => {
   }, [images.length]);
 
   return (
-    <div className="overflow-hidden relative w-full h-full pt-10">
+    <div className="overflow-hidden relative w-full h-full lg:pt-10 pt-16">
       <div
         ref={carouselRef}
         className="flex transition-transform duration-700 ease-in-out"
@@ -56,15 +56,15 @@ const AutoSlide: React.FC<AutoSlideProps> = ({ images }) => {
       {/* Buttons */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 focus:outline-none"
+        className="absolute left-4 lg:top-1/2 top-32 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 focus:outline-none"
       >
-        <ChevronLeftIcon className="w-10" />
+        <ChevronLeftIcon className="lg:w-10 w-4" />
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 focus:outline-none"
+        className="absolute right-4 lg:top-1/2 top-32 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 focus:outline-none"
       >
-        <ChevronRightIcon className="w-10" />
+        <ChevronRightIcon className="lg:w-10 w-4" />
       </button>
     </div>
   );
