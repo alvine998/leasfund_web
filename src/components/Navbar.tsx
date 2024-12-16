@@ -33,8 +33,16 @@ export default function Navbar() {
       href: "/aboutus",
     },
     {
-      name: "Ketentuan & Privasi",
+      name: "Kebijakan Privasi",
       href: "/privacy",
+    },
+    {
+      name: "Ketentuan Pengguna",
+      href: "/term",
+    },
+    {
+      name: "Kerjasama",
+      href: "/teamwork",
     },
   ];
   const pathname = usePathname();
