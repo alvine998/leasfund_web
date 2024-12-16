@@ -14,6 +14,12 @@ import Simulation from "@/components/Simulation";
 import Services from "@/components/Services";
 // import Countdown from "@/components/Countdown";
 import Link from "next/link";
+import {
+  AcademicCapIcon,
+  ClipboardDocumentIcon,
+  HomeIcon,
+} from "@heroicons/react/24/outline";
+import AutoSlide from "@/components/AutoSlide";
 
 type RangeItem = {
   [key: string]: {
@@ -75,10 +81,11 @@ export default function Index() {
       id: 1,
       children: [
         {
-          icon: <ClipboardDocumentListIcon className="text-green-500 lg:w-10 w-16" />,
+          icon: (
+            <ClipboardDocumentListIcon className="text-green-500 lg:w-10 w-16" />
+          ),
           title: "1. Isi Form Online",
-          description:
-            "Siapkan data jaminan BPKB Motor dan data diri Anda",
+          description: "Siapkan data jaminan BPKB Motor dan data diri Anda",
         },
         {
           icon: <PhoneIcon className="text-green-500 lg:w-10 w-20" />,
@@ -100,39 +107,72 @@ export default function Index() {
             "kami akan lakukan survei dan cek aset untuk proses selanjutnya.",
         },
         {
-          icon: <DocumentCurrencyDollarIcon className="text-green-500 lg:w-10 w-20" />,
+          icon: (
+            <DocumentCurrencyDollarIcon className="text-green-500 lg:w-10 w-20" />
+          ),
           title: "4. Pencairan Dana",
           description:
             "Setelah survei dan disetujui, dana akan segera cair ke rekening Anda",
         },
       ],
-    }
+    },
   ];
   // const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // const toggleDropdown = () => setIsOpen(!isOpen);
 
+  const images = [
+    "/images/banner13.jpg",
+    "/images/banner12.jpg",
+    "/images/banner11.jpg",
+  ];
+
   return (
     <div className="w-full">
       <Navbar />
+      {/* Section Slide */}
+      <div>
+        <AutoSlide images={images} />
+      </div>
       {/* Section 1 */}
-      <div className="bg-[url('/images/banner4.png')] lg:w-full w-auto h-[100vh] lg:h-[120vh] lg:-mt-20 mt-[70px] lg:pt-[200px] pt-20 lg:px-0 px-10">
-        <h2 className="text-3xl font-semibold lg:w-[450px] w-full text-green-700">
-          Solusi Dana Cepat Jaminan BPKB.
-        </h2>
-        <p className="text-md lg:mt-4 mt-2 lg:w-[500px] w-full">
-          <strong>Leasfund</strong> adalah mitra keuangan anda yang dapat
-          diandalkan, menyediakan solusi dana tunai yang cepat dan mudah dengan
-          menggunakan BPKB motor dan mobil.
-        </p>
-        <Link href={"https://whatsform.com/7yblz0"}>
-          <button
-            type="button"
-            className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200"
-          >
-            Ajukan Sekarang
-          </button>
-        </Link>
+      <div className="bg-white lg:w-full w-auto lg:-mt-20 mt-[70px] lg:pt-[200px] pt-20 pb-20 lg:px-20 px-10 flex lg:flex-row flex-col gap-10 justify-between items-end">
+        <div className="w-full">
+          <h2 className="text-3xl font-semibold text-green-700">
+            Solusi Dana Cepat Jaminan BPKB.
+          </h2>
+          <p className="text-md lg:mt-4 mt-2 text-gray-700">
+            <strong>Leasfund</strong> adalah mitra keuangan anda yang dapat
+            diandalkan, menyediakan solusi dana tunai yang cepat dan mudah
+            dengan menggunakan BPKB motor dan mobil.
+          </p>
+          <Link href={"https://whatsform.com/7yblz0"}>
+            <button
+              type="button"
+              className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200"
+            >
+              Ajukan Sekarang
+            </button>
+          </Link>
+        </div>
+        <div className="w-full">
+          <h2 className="text-black text-md text-center">
+            Untuk Berbagai Kebutuhan:
+          </h2>
+          <div className="w-full flex lg:flex-row flex-col gap-8 mt-2">
+            <div className="p-2 rounded w-full shadow">
+              <HomeIcon className="w-8 text-green-600" />
+              <h5 className="text-black mt-4">Pembiayaan Rumah</h5>
+            </div>
+            <div className="p-2 rounded w-full shadow">
+              <AcademicCapIcon className="w-8 text-green-600" />
+              <h5 className="text-black mt-4">Biaya Pendidikan</h5>
+            </div>
+            <div className="p-2 rounded w-full shadow">
+              <ClipboardDocumentIcon className="w-8 text-green-600" />
+              <h5 className="text-black mt-4">Biaya Kesehatan</h5>
+            </div>
+          </div>
+        </div>
       </div>
       {/* Countdown */}
       {/* <div>

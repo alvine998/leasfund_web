@@ -59,9 +59,14 @@ export default function Navbar() {
             ))}
           </div>
           <div className="md:ml-20">
-            <button className="bg-green-600 p-2 font-sans font-bold text-lg text-white rounded hover:bg-green-500 duration-200 transition-all">
-              Ajukan Kredit
-            </button>
+            <Link href={"https://whatsform.com/7yblz0"}>
+              <button
+                type="button"
+                className="bg-green-600 p-2 font-sans font-bold text-lg text-white rounded hover:bg-green-500 duration-200 transition-all"
+              >
+                Ajukan Kredit
+              </button>
+            </Link>
           </div>
         </div>
       </div>
