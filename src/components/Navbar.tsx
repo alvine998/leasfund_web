@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <div>
       <div className="lg:block hidden">
-        <div className="bg-white shadow md:h-[70px] w-full items-center px-20 flex fixed z-10 top-0">
+        <div className="bg-white shadow md:h-[70px] w-full items-center px-20 flex fixed z-50 top-0">
           <div>
             <img
               src="/images/logo_full2.png"
@@ -73,7 +73,7 @@ export default function Navbar() {
       </div>
 
       <div className="lg:hidden block">
-        <div className="bg-white shadow h-[70px] w-full items-center justify-center flex fixed z-10 top-0">
+        <div className="bg-white shadow h-[70px] w-full items-center justify-center flex fixed z-50 top-0">
           <Link href={"/"}>
             <img
               src="/images/logo_full2.png"

@@ -3,7 +3,7 @@ import PartnerLogo from "./PartnerLogo";
 
 export default function AboutUs() {
   return (
-    <div className="bg-white w-full p-2">
+    <div className="bg-white w-full p-2 lg:px-40 px-2 pt-10">
       <p className="text-black text-justify">
         Leasfund adalah platform pembiayaan aggregator dana tunai BPKB yang
         hadir untuk memberikan solusi finansial terbaik bagi masyarakat. Kami
