@@ -15,20 +15,6 @@ export default function Navbar() {
       href: "/",
     },
     {
-      name: "Produk",
-      href: "/product",
-      children: [
-        {
-          name: "Mobil",
-          href: "/car",
-        },
-        {
-          name: "Motor",
-          href: "/motorcycle",
-        },
-      ],
-    },
-    {
       name: "Tentang Kami",
       href: "/aboutus",
     },
