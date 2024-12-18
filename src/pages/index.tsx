@@ -1,12 +1,13 @@
 import BottomNav from "@/components/BottomNav";
 import Navbar from "@/components/Navbar";
 import {
+  ChevronUpIcon,
   ClipboardDocumentCheckIcon,
   ClipboardDocumentListIcon,
   DocumentCurrencyDollarIcon,
   PhoneIcon,
 } from "@heroicons/react/20/solid";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Steps from "@/components/Steps";
 import PartnerLogo from "@/components/PartnerLogo";
 import Benefit from "@/components/Benefit";
@@ -16,6 +17,7 @@ import Services from "@/components/Services";
 import Link from "next/link";
 import {
   AcademicCapIcon,
+  ChatBubbleOvalLeftIcon,
   ClipboardDocumentIcon,
   HomeIcon,
 } from "@heroicons/react/24/outline";
@@ -121,6 +123,25 @@ export default function Index() {
 
   // const toggleDropdown = () => setIsOpen(!isOpen);
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    setIsVisible(scrollTop > 200); // Show the button after 200px of scrolling
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const images = [
     "/images/banner13.jpg",
     "/images/banner12.jpg",
@@ -130,6 +151,32 @@ export default function Index() {
   return (
     <div className="w-full">
       <Navbar />
+      <div className="fixed bottom-4 left-4 z-[999]">
+        <Link href={`https://wa.me/6285863953727`} target="_blank">
+          <button
+            className="bg-green-600 rounded-full p-2 flex items-center justify-center"
+            type="button"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png"
+              alt="wa"
+              className="w-10 h-10"
+            />
+          </button>
+        </Link>
+      </div>
+      {isVisible && (
+        <div className="fixed bottom-4 right-4 z-[999] transform duration-200 ease-in-out">
+          <button
+          onClick={scrollToTop}
+            className="bg-green-600 hover:bg-green-500 rounded-full p-2 flex items-center justify-center"
+            type="button"
+          >
+            <ChevronUpIcon className="w-10 h-10 text-white" />
+          </button>
+        </div>
+      )}
+
       {/* Section Slide */}
       <div>
         <AutoSlide images={images} />
@@ -179,11 +226,11 @@ export default function Index() {
         <Countdown />
       </div> */}
       {/* Section 2 */}
-      <div className="bg-gray-200 w-full h-[100vh] lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center">
+      <div className="bg-gray-200 w-full h-auto lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center">
         <Benefit />
       </div>
       {/* Section 3 */}
-      <div className="bg-white h-[100vh] w-full lg:px-10 px-4 flex lg:flex-row flex-col justify-center items-center">
+      <div className="bg-white h-auto w-full lg:px-10 px-4 lg:py-20 py-4 flex lg:flex-row flex-col justify-center items-center">
         <h2
           className={`lg:-mt-0 -mt-10 text-4xl w-full font-semibold text-center duration-500 transition-opacity text-green-700`}
         >
