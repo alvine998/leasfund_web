@@ -19,11 +19,11 @@ const Accordion = ({ items, activeIndex, setActiveIndex, from }: any) => {
           </button>
           <div
             className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-              activeIndex === `${from}${index}` ? 'max-h-96' : 'max-h-0'
+              activeIndex === `${from}${index}` ? 'max-h-96 overflow-auto' : 'max-h-0'
             }`}
           >
             <div className="p-4 bg-gray-100">
-            <p className='text-black text-left text-xs' dangerouslySetInnerHTML={{ __html: item.content.replace(/\n/g, '<br>') }} />
+            <p className='text-black text-left lg:text-lg text-xs' dangerouslySetInnerHTML={{ __html: item.content.replace(/\n/g, '<br>') }} />
             </div>
           </div>
         </div>

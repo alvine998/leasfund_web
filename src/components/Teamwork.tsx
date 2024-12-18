@@ -146,9 +146,8 @@ export default function Teamworks() {
       ],
     },
   ];
-  console.log(activeIndex);
   return (
-    <div className={`bg-white transition-[max-height] duration-500 ease-in-out ${activeIndex !== null ? "max-h-[400vh]" : "max-h-[320vh]"} w-full pt-20`}>
+    <div className={`bg-white transition-[max-height] duration-500 ease-in-out ${activeIndex !== null ? "max-h-[400vh]" : "max-h-[325vh]"} w-full pt-20`}>
       <div>
         <img
           src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/card%2FBanner%201%20Leasfund%201920x720.png?alt=media&token=709af5a4-1f79-4622-8ecb-1f7dd840786a"
@@ -156,7 +155,7 @@ export default function Teamworks() {
         />
       </div>
       <div className="mt-10">
-        <div className="bg-gray-50 flex items-center justify-center w-full">
+        <div className="bg-gray-50 flex items-center justify-center w-full lg:px-48 px-0">
           <div>
             <h1 className="text-2xl font-bold text-center mb-6 text-black">
               Kerjasama
@@ -164,7 +163,7 @@ export default function Teamworks() {
             <Accordion activeIndex={activeIndex} setActiveIndex={setActiveIndex} items={items} from={"teams"} />
           </div>
         </div>
-        <div className="bg-gray-50 flex items-center justify-center w-full border-t-2 pt-10 mt-10">
+        <div className="bg-gray-50 flex items-center justify-center w-full border-t-2 pt-10 mt-10 lg:px-20 px-0">
           <div>
             <h1 className="text-2xl font-bold text-center mb-6 text-black">
               FAQ
@@ -186,6 +185,7 @@ export default function Teamworks() {
           <img
             src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png?hl=id"
             alt="playgoogle"
+            className="lg:ml-10 ml-0"
           />
         </Link>
       </div>

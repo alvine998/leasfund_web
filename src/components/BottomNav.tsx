@@ -4,7 +4,7 @@ import React from "react";
 
 export default function BottomNav() {
   return (
-    <div className="lg:h-[50vh] h-auto w-full shadow bg-green-700 py-5 lg:px-20 px-2 flex lg:flex-row flex-col justify-between items-start">
+    <div className="lg:h-[40vh] h-auto w-full shadow bg-green-700 py-5 lg:px-20 px-2 flex lg:flex-row flex-col justify-between items-start">
       <div className="w-full pt-5 lg:flex hidden lg:justify-start justify-center items-center">
         <img
           src="/images/logo_full2.png"
@@ -13,7 +13,7 @@ export default function BottomNav() {
         />
       </div>
       <div className="w-full">
-        <h5 className="text-xl font-bold mt-8">Navigasi</h5>
+        <h5 className="text-xl font-bold mt-5">Navigasi</h5>
         <ol className="pl-4">
           <li className="list-disc mt-2 hover:underline">
             <Link href={"/aboutus"}>Tentang Kami</Link>
@@ -33,7 +33,7 @@ export default function BottomNav() {
         </ol>
       </div>
       <div className="w-full">
-        <h5 className="text-xl font-bold mt-8">Kontak Kami</h5>
+        <h5 className="text-xl font-bold mt-5">Kontak Kami</h5>
         <Link href={`https://wa.me/6285863953727`}>
           <button className="mt-5 flex gap-2 hover:underline items-center">
             <PhoneIcon className="lg:w-5 w-8" />

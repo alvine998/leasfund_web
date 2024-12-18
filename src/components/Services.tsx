@@ -30,15 +30,18 @@ export default function Services({ setFilter }: Props) {
           </button>
         </Link>
 
-        <button
-          onClick={() => {
-            setFilter("simulation");
-          }}
-          className="p-2 border shadow-lg rounded-lg gap-2 flex items-center hover:-mt-2 mt-0 duration-200 transition-all w-full"
-        >
-          <CalculatorIcon className="w-14 text-green-600" />
-          <h5 className="text-black">Simulasi Kredit</h5>
-        </button>
+        <div>
+          <button
+            onClick={() => {
+              setFilter("simulation");
+            }}
+            className="p-2 border shadow-lg rounded-lg gap-2 flex items-center hover:-mt-2 mt-0 duration-200 transition-all w-full"
+          >
+            <CalculatorIcon className="w-14 text-green-600" />
+            <h5 className="text-black">Simulasi Kredit</h5>
+          </button>
+        </div>
+
         <Link href={`https://wa.me/6285863953727`}>
           <button className="p-2 border shadow-lg rounded-lg gap-2 flex items-center hover:-mt-2 mt-0 duration-200 transition-all w-full">
             <PhoneIcon className="w-14 text-green-600" />
