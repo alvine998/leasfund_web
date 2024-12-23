@@ -168,7 +168,7 @@ export default function Index() {
       {isVisible && (
         <div className="fixed bottom-4 right-4 z-[999] transform duration-200 ease-in-out">
           <button
-          onClick={scrollToTop}
+            onClick={scrollToTop}
             className="bg-green-600 hover:bg-green-500 rounded-full p-2 flex items-center justify-center"
             type="button"
           >
@@ -188,9 +188,8 @@ export default function Index() {
             Solusi Dana Cepat Jaminan BPKB.
           </h2>
           <p className="text-md lg:mt-4 mt-2 text-gray-700">
-            <strong>Leasfund</strong> adalah mitra keuangan anda yang dapat
-            diandalkan, menyediakan solusi dana tunai yang cepat dan mudah
-            dengan menggunakan BPKB motor dan mobil.
+            Kami akan membantu menemukan produk layanan pinjaman Gadai BPKB yang
+            sesuai dengan kebutuhan Anda dengan cepat.
           </p>
           <Link href={"https://whatsform.com/7yblz0"}>
             <button
