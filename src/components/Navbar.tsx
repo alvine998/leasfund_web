@@ -30,6 +30,10 @@ export default function Navbar() {
       name: "Kerjasama",
       href: "/teamwork",
     },
+    {
+      name: "Artikel",
+      href: "/article",
+    },
   ];
   const pathname = usePathname();
   return (
@@ -141,6 +145,17 @@ export default function Navbar() {
                     }`}
                   >
                     Kerjasama
+                  </p>
+                </Link>
+                <Link href={"/article"}>
+                  <p
+                    className={`text-black text-xl ${
+                      pathname == "/article"
+                        ? "p-2 text-white bg-green-500 rounded"
+                        : ""
+                    }`}
+                  >
+                    Article
                   </p>
                 </Link>
               </div>

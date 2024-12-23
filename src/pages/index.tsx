@@ -17,7 +17,6 @@ import Services from "@/components/Services";
 import Link from "next/link";
 import {
   AcademicCapIcon,
-  ChatBubbleOvalLeftIcon,
   ClipboardDocumentIcon,
   HomeIcon,
 } from "@heroicons/react/24/outline";
@@ -220,13 +219,57 @@ export default function Index() {
           </div>
         </div>
       </div>
-      {/* Countdown */}
-      {/* <div>
-        <Countdown />
-      </div> */}
       {/* Section 2 */}
       <div className="bg-gray-200 w-full h-auto lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center">
         <Benefit />
+      </div>
+
+      {/* Sekilas */}
+      <div className="bg-white w-full lg:py-10 relative">
+        <h2 className="italic text-green-600 text-center font-bold text-lg">
+          Sekilas Kami
+        </h2>
+        <h5 className="text-black text-center font-bold text-4xl">Leasfund</h5>
+        <div className="w-full flex lg:flex-row flex-col gap-4 justify-between items-center">
+          <div className="w-full">
+            <img
+              src="/images/logo_full2.png"
+              alt="logo"
+              className="w-[150px] h-auto absolute top-40 left-40"
+            />
+            <img
+              src="/images/woman-business.png"
+              alt="wmn"
+              className="w-full h-[70vh]"
+            />
+          </div>
+          <div className="w-full lg:pr-20 pr-0">
+            <p className="text-gray-800">
+              <strong>Leasfund</strong> adalah marketplace dan fasilitator yang membantu
+              masyarakat memperoleh produk pinjaman uang terbaik di Indonesia.
+              <br />
+              <br />
+              Diisi oleh tim yang berpengalaman selama belasan tahun di dunia
+              Leasing dan Multifinance, kami yakin bahwa Leasfund mampu membantu
+              semua masalah finansial Anda. Perlu diketahui bahwa kami tidak
+              sembarangan memilih partner Leasing dan wajib kami cek dan tes
+              kelebihan serta kekurangan produk dari Leasing tersebut.
+              <br />
+              <br />
+              Hal tersebut kami lakukan demi kepuasan konsumen, sehingga kami
+              tidak segan-segan memutus kerjasama dengan pihak Leasing apabila
+              konsumen merasa dirugikan dan disulitkan.
+            </p>
+            <Link href={"/aboutus"}>
+              <button
+                type="button"
+                className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200"
+              >
+                Selengkapnya
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
       {/* Section 3 */}
       <div className="bg-white h-auto w-full lg:px-10 px-4 lg:py-20 py-4 flex lg:flex-row flex-col justify-center items-center">

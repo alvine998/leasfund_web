@@ -22,13 +22,13 @@ export default function BottomNav() {
               </Link>
             </li>
             <li className="list-disc mt-2 hover:underline">
-              <Link className="text-white" href={"/product/digital-leasing"}>
-                Digital Leasing
+              <Link className="text-white" href={"/product/car"}>
+                Gadai BPKB Mobil
               </Link>
             </li>
             <li className="list-disc mt-2 hover:underline">
-              <Link className="text-white" href={"/product/personal-loan"}>
-                Personal Loan
+              <Link className="text-white" href={"/product/motor"}>
+                Gadai BPKB Motor
               </Link>
             </li>
             <li className="list-disc mt-2 hover:underline">
@@ -70,7 +70,9 @@ export default function BottomNav() {
           </button>
         </div>
       </div>
-      <h5 className="text-center">Copyright © 2023 PT. Leasfund Teknologi Solusi</h5>
+      <h5 className="text-center">
+        Copyright © 2023 PT. Leasfund Teknologi Solusi
+      </h5>
     </div>
   );
 }
