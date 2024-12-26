@@ -1,5 +1,5 @@
 import { getArticles } from "@/pages/api/article";
-import { IArticle } from "@/pages/types/article";
+import { IArticle } from "@/types/article";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 

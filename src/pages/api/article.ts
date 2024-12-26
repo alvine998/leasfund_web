@@ -13,7 +13,7 @@ import {
     equalTo,
 } from "firebase/database";
 import { db } from "../../../firebase";
-import { IArticle } from "../types/article";
+import { IArticle } from "../../types/article";
 
 const articlesRef = ref(db, "articles");
 

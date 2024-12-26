@@ -1,4 +1,4 @@
-import { IArticle } from "@/pages/types/article";
+import { IArticle } from "@/types/article";
 import { ArrowLeftIcon, EyeIcon } from "@heroicons/react/20/solid";
 import moment from "moment";
 import Image from "next/image";
