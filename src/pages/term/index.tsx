@@ -23,15 +23,16 @@ export default function Term() {
       </div>
       <div className="lg:mt-[25vh] md:mt-[5vh] mt-0">
         <div className="bg-white w-full lg:px-40 px-4 p-2 py-10">
-          <p className="text-black text-justify">
-            1. Pengantar Syarat dan Ketentuan ini mengatur penggunaan layanan
-            aplikasi Leasfund. Dengan mengunduh, mendaftar, dan menggunakan
-            aplikasi Leasfund, Anda menyetujui semua syarat dan ketentuan yang
-            tercantum. Jika Anda tidak setuju, harap berhenti menggunakan
-            aplikasi.
+          <p className="text-black text-left">
+            1. <strong>Pengantar Syarat dan Ketentuan</strong>
+            <br />
+            ini mengatur penggunaan layanan aplikasi Leasfund. Dengan mengunduh,
+            mendaftar, dan menggunakan aplikasi Leasfund, Anda menyetujui semua
+            syarat dan ketentuan yang tercantum. Jika Anda tidak setuju, harap
+            berhenti menggunakan aplikasi.
           </p>
-          <p className="text-black text-justify mt-2">
-            2. Penggunaan Layanan
+          <p className="text-black text-left mt-2">
+            2. <strong>Penggunaan Layanan</strong>
             <br />
             Registrasi: Anda diwajibkan untuk memberikan informasi yang akurat
             dan lengkap saat mendaftar dan bertanggung jawab atas informasi
@@ -45,8 +46,8 @@ export default function Term() {
             menyetujui semua transaksi finansial yang dilakukan melalui aplikasi
             dan bertanggung jawab sepenuhnya atas transaksi tersebut.
           </p>
-          <p className="text-black text-justify mt-2">
-            3. Kewajiban Pengguna
+          <p className="text-black text-left mt-2">
+            3. <strong>Kewajiban Pengguna</strong>
             <br />
             Informasi yang Valid: Anda setuju untuk memberikan informasi yang
             benar dan akurat serta memperbarui jika ada perubahan.
@@ -59,21 +60,22 @@ export default function Term() {
             panduan, dan instruksi yang dikeluarkan Leasfund terkait penggunaan
             aplikasi.
           </p>
-          <p className="text-black text-justify mt-2">
-            4. Keterbatasan Layanan Leasfund berhak untuk memodifikasi,
-            menangguhkan, atau menghentikan layanan sewaktu-waktu, dengan atau
-            tanpa pemberitahuan terlebih dahulu. Leasfund juga berhak menolak
-            atau membatasi akses pengguna yang melanggar Syarat dan Ketentuan
-            ini.
+          <p className="text-black text-left mt-2">
+            4. <strong>Keterbatasan Layanan Leasfund</strong>
+            <br /> berhak untuk memodifikasi, menangguhkan, atau menghentikan
+            layanan sewaktu-waktu, dengan atau tanpa pemberitahuan terlebih
+            dahulu. Leasfund juga berhak menolak atau membatasi akses pengguna
+            yang melanggar Syarat dan Ketentuan ini.
           </p>
-          <p className="text-black text-justify mt-2">
-            5. Biaya dan Pembayaran Penggunaan beberapa fitur tertentu mungkin
-            memerlukan pembayaran. Leasfund akan memberikan rincian biaya yang
-            berlaku. Semua biaya dan pembayaran bersifat final dan tidak dapat
-            dikembalikan kecuali dinyatakan lain.
+          <p className="text-black text-left mt-2">
+            5. <strong>Biaya dan Pembayaran Penggunaan</strong>
+            <br />
+            beberapa fitur tertentu mungkin memerlukan pembayaran. Leasfund akan
+            memberikan rincian biaya yang berlaku. Semua biaya dan pembayaran
+            bersifat final dan tidak dapat dikembalikan kecuali dinyatakan lain.
           </p>
-          <p className="text-black text-justify mt-2">
-            6. Hak dan Kewajiban Leasfund
+          <p className="text-black text-left mt-2">
+            6. <strong>Hak dan Kewajiban Leasfund</strong>
             <br />
             Perlindungan Data: Leasfund berkomitmen untuk melindungi privasi
             Anda sesuai Kebijakan Privasi yang berlaku.
@@ -86,30 +88,35 @@ export default function Term() {
             pengguna yang melanggar ketentuan ini tanpa pemberitahuan terlebih
             dahulu.
           </p>
-          <p className="text-black text-justify mt-2">
-            7. Penolakan Tanggung Jawab Leasfund tidak bertanggung jawab atas:
+          <p className="text-black text-left mt-2">
+            7. <strong>Penolakan Tanggung Jawab Leasfund</strong> tidak
+            bertanggung jawab atas:
             <br />
             Keterlambatan, kegagalan, atau kesalahan transaksi yang diakibatkan
             oleh gangguan sistem, akses internet, atau faktor di luar kendali
             kami. Kerugian akibat tindakan pengguna atau pihak ketiga yang
             melanggar kebijakan ini atau hukum yang berlaku.
           </p>
-          <p className="text-black text-justify mt-2">
-            8. Perubahan Syarat dan Ketentuan Leasfund berhak untuk mengubah
-            Syarat dan Ketentuan ini dari waktu ke waktu. Setiap perubahan akan
-            diumumkan melalui aplikasi dan berlaku setelah tanggal yang
-            ditetapkan.
+          <p className="text-black text-left mt-2">
+            8. <strong>Perubahan Syarat dan Ketentuan Leasfund</strong>
+            <br />
+            berhak untuk mengubah Syarat dan Ketentuan ini dari waktu ke waktu.
+            Setiap perubahan akan diumumkan melalui aplikasi dan berlaku setelah
+            tanggal yang ditetapkan.
           </p>
-          <p className="text-black text-justify mt-2">
-            9. Hukum yang Berlaku Syarat dan Ketentuan ini diatur berdasarkan
-            hukum yang berlaku di Indonesia. Setiap perselisihan yang timbul
-            akan diselesaikan melalui mediasi terlebih dahulu. Jika tidak
-            berhasil, perselisihan akan diselesaikan melalui pengadilan.
+          <p className="text-black text-left mt-2">
+            9. <strong>Hukum yang Berlaku</strong>
+            <br />
+            Syarat dan Ketentuan ini diatur berdasarkan hukum yang berlaku di
+            Indonesia. Setiap perselisihan yang timbul akan diselesaikan melalui
+            mediasi terlebih dahulu. Jika tidak berhasil, perselisihan akan
+            diselesaikan melalui pengadilan.
           </p>
-          <p className="text-black text-justify mt-2">
-            10. Kontak Untuk pertanyaan atau keluhan terkait Syarat dan
-            Ketentuan ini, silakan hubungi layanan pelanggan melalui aplikasi
-            Leasfund.
+          <p className="text-black text-left mt-2">
+            10. <strong>Kontak</strong>
+            <br />
+            Untuk pertanyaan atau keluhan terkait Syarat dan Ketentuan ini,
+            silakan hubungi layanan pelanggan melalui aplikasi Leasfund.
           </p>
         </div>
       </div>

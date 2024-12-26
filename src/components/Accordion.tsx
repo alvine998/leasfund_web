@@ -14,7 +14,7 @@ const Accordion = ({ items, activeIndex, setActiveIndex, from }: any) => {
             className="flex justify-between items-center w-full px-4 py-2 bg-green-200 hover:bg-green-300 focus:outline-none"
             onClick={() => toggleAccordion(`${from}${index}`)}
           >
-            <span className="text-lg font-medium text-gray-800">{item.title}</span>
+            <span className={`${item.title.length > 30 ? "text-sm" : "text-lg"} text-left font-bold text-gray-800`}>{item.title}</span>
             <span className='text-gray-700'>{activeIndex === `${from}${index}` ? '-' : '+'}</span>
           </button>
           <div

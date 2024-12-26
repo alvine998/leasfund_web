@@ -225,25 +225,25 @@ export default function Index() {
       </div>
 
       {/* Sekilas */}
-      <div className="bg-white w-full lg:py-10 relative">
+      <div className="bg-white w-full lg:py-10 py-10 relative shadow">
         <h2 className="italic text-green-600 text-center font-bold text-lg">
           Sekilas Kami
         </h2>
-        <h5 className="text-black text-center font-bold text-4xl">Leasfund</h5>
+        <h5 className="text-black text-center font-bold text-4xl hidden">Leasfund</h5>
         <div className="w-full flex lg:flex-row flex-col gap-4 justify-between items-center">
           <div className="w-full">
             <img
               src="/images/logo_full2.png"
               alt="logo"
-              className="w-[150px] h-auto absolute top-40 left-40"
+              className="w-[150px] h-auto absolute lg:top-40 top-20 lg:left-40 left-0"
             />
             <img
               src="/images/woman-business.png"
               alt="wmn"
-              className="w-full h-[70vh]"
+              className="w-full lg:h-[70vh] h-auto lg:ml-0"
             />
           </div>
-          <div className="w-full lg:pr-20 pr-0">
+          <div className="w-full lg:pr-20 pr-0 lg:px-0 px-4">
             <p className="text-gray-800">
               <strong>Leasfund</strong> adalah marketplace dan fasilitator yang membantu
               masyarakat memperoleh produk pinjaman uang terbaik di Indonesia.
@@ -272,7 +272,7 @@ export default function Index() {
         </div>
       </div>
       {/* Section 3 */}
-      <div className="bg-white h-auto w-full lg:px-10 px-4 lg:py-20 py-4 flex lg:flex-row flex-col justify-center items-center">
+      <div className="bg-white h-auto w-full lg:px-10 px-4 lg:py-20 py-14 flex lg:flex-row flex-col justify-center items-center">
         <h2
           className={`lg:-mt-0 -mt-10 text-4xl w-full font-semibold text-center duration-500 transition-opacity text-green-700`}
         >

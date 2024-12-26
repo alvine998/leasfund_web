@@ -35,6 +35,7 @@ export default function Navbar() {
       href: "/article",
     },
   ];
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
   return (
     <div>
@@ -100,12 +101,55 @@ export default function Navbar() {
                         : ""
                     }`}
                   >
-                    Home
+                    Beranda
                   </p>
                 </Link>
+                <button
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                  }}
+                >
+                  <p
+                    className={`text-black text-xl text-left ${
+                      pathname == "/product"
+                        ? "p-2 text-white bg-green-500 rounded"
+                        : ""
+                    }`}
+                  >
+                    Produk
+                  </p>
+                </button>
+                <div
+                  className={`flex flex-col gap-2 z-10 ml-2 transform duration-300 transition-[max-height] ease-in-out ${
+                    isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <Link href={"/product/car"}>
+                    <p
+                      className={`text-black text-md font-bold ${
+                        pathname == "/product/car"
+                          ? "p-2 text-white bg-green-500 rounded"
+                          : ""
+                      }`}
+                    >
+                      Gadai BPKB Mobil
+                    </p>
+                  </Link>
+                  <Link href={"/product/motor"}>
+                    <p
+                      className={`text-black text-md font-bold ${
+                        pathname == "/product/motor"
+                          ? "p-2 text-white bg-green-500 rounded"
+                          : ""
+                      }`}
+                    >
+                      Gadai BPKB Motor
+                    </p>
+                  </Link>
+                </div>
                 <Link href={"/aboutus"}>
                   <p
-                    className={`text-black text-xl ${
+                    className={`text-black text-xl z-50 relative ${isOpen ? "-mt-0" : "-mt-4"} ${
                       pathname == "/aboutus"
                         ? "p-2 text-white bg-green-500 rounded"
                         : ""
@@ -155,7 +199,7 @@ export default function Navbar() {
                         : ""
                     }`}
                   >
-                    Article
+                    Artikel
                   </p>
                 </Link>
               </div>

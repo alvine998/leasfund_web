@@ -17,7 +17,7 @@ export default function ArticleList() {
           className="w-full h-auto absolute z-0"
         />
         <h1
-          className={`${poppinsBold} text-black font-bold lg:text-4xl md:text-4xl text-xl absolute z-10 lg:top-0 top-10 lg:right-80 md:right-40 right-4`}
+          className={`${poppinsBold} text-black font-bold lg:text-4xl md:text-4xl text-xl absolute z-10 lg:top-0 top-10 lg:right-80 md:right-40 right-14`}
         >
           Artikel
         </h1>

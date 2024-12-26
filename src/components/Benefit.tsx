@@ -1,7 +1,4 @@
 import React from "react";
-import { Poppins } from "next/font/google";
-
-const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
 export default function Benefit() {
   const benefits: any[] = [
@@ -23,7 +20,7 @@ export default function Benefit() {
   ];
   return (
     <div>
-      <h2 className={`${poppinsBold} text-black text-4xl text-center`}>
+      <h2 className={`font-bold text-black text-4xl text-center`}>
         Mengapa Harus Leasfund ?
       </h2>
       <div className="flex lg:flex-row flex-col gap-4 mt-5 items-start justify-center">
