@@ -15,6 +15,16 @@ export default function Layout({ children }: any) {
       href: "/admin/article",
       current: pathname === "/admin/article",
     },
+    {
+      name: "Nasabah",
+      href: "/admin/customer",
+      current: pathname === "/admin/customer",
+    },
+    {
+      name: "Produk",
+      href: "/admin/product",
+      current: pathname === "/admin/product",
+    },
   ];
   return (
     <div className="min-h-screen w-full bg-white flex lg:flex-row flex-col gap-2">
@@ -22,14 +32,15 @@ export default function Layout({ children }: any) {
         <img src="/images/logo_full2.png" alt="logo" className="w-40 h-auto" />
         <div className="px-4 w-full">
           {tabs.map((v: any, i: number) => (
-            <div
-              key={i}
-              className={`${
-                v.current ? "bg-green-700" : "bg-white text-gray-800"
-              } w-full py-2 text-center cursor-pointer hover:bg-green-700 hover:text-white duration-300 rounded`}
-            >
-              <Link href={v.href}>{v.name}</Link>
-            </div>
+            <Link href={v.href} key={i}>
+              <button
+                className={`${
+                  v.current ? "bg-green-700" : "bg-white text-gray-800"
+                } w-full py-2 text-center cursor-pointer hover:bg-green-700 hover:text-white duration-300 rounded border-b`}
+              >
+                {v.name}
+              </button>
+            </Link>
           ))}
           <div
             className={`bg-white text-gray-800 w-full py-2 text-center cursor-pointer rounded hover:bg-red-700 hover:text-white duration-300`}
@@ -43,7 +54,9 @@ export default function Layout({ children }: any) {
           </div>
         </div>
       </div>
-      <main className="w-full overflow-auto">{children}</main>
+      <main className="w-full overflow-auto">
+        <div className="bg-white w-full min-h-screen mt-10 p-4">{children}</div>
+      </main>
     </div>
   );
 }

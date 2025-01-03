@@ -1,5 +1,6 @@
 import { deleteArticle, getArticles } from "@/pages/api/article";
 import { IArticle } from "@/types/article";
+import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
@@ -7,32 +8,24 @@ import DataTable from "react-data-table-component";
 export default function AdminArticle() {
   const router = useRouter();
   const [filter, setFilter] = useState<any>(router.query);
-  const [articles, setArticles] = useState<IArticle[]>([]);
+  const [products, setProducts] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const getData = async () => {
     setLoading(true);
     try {
-      const result = await getArticles(filter?.search || "");
-      setArticles(result);
+      const result = await axios.get("/api/product/list");
+      setProducts(result?.data?.items);
       setLoading(false);
     } catch (error) {
       setLoading(false);
       console.log(error);
     }
   };
-  const handleDelete = async (id: string) => {
-    await deleteArticle(id);
-    setArticles((prev) => prev.filter((article) => article.id !== id));
-  };
+  const handleDelete = async (id: string) => {};
   const column: any = [
     {
-      name: "Slug",
-      selector: (row: any) => row.slug,
-      sortable: true,
-    },
-    {
-      name: "Judul",
-      selector: (row: any) => row.title,
+      name: "Nama Produk",
+      selector: (row: any) => row.name,
       sortable: true,
     },
     {
@@ -41,10 +34,10 @@ export default function AdminArticle() {
       sortable: true,
     },
     {
-      name: "Thumbnail",
+      name: "Logo",
       selector: (row: any) => (
         <div className="py-2 w-auto">
-          <img src={row?.thumbnail} alt="thumbnail" className="w-40 h-auto" />
+          <img src={row?.logo} alt="thumbnail" className="w-40 h-auto" />
         </div>
       ),
     },
@@ -82,7 +75,7 @@ export default function AdminArticle() {
   return (
     <div>
       <div>
-        <h1 className="text-2xl font-bold text-black text-left">Artikel</h1>
+        <h1 className="text-2xl font-bold text-black text-left">Produk</h1>
         <div className="my-2">
           <input
             type="text"
@@ -97,7 +90,7 @@ export default function AdminArticle() {
             className="bg-green-700 hover:bg-green-600 text-white py-2 px-4 rounded duration-200"
             onClick={() => router.push("/admin/article/create")}
           >
-            Tambah Artikel
+            Tambah Produk
           </button>
         </div>
       </div>
@@ -110,7 +103,7 @@ export default function AdminArticle() {
           {show && (
             <DataTable
               columns={column}
-              data={articles}
+              data={products}
               pagination
               highlightOnHover
               responsive
