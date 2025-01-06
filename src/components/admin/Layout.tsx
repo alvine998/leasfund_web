@@ -21,6 +21,11 @@ export default function Layout({ children }: any) {
       current: pathname === "/admin/customer",
     },
     {
+      name: "Member",
+      href: "/admin/member",
+      current: pathname === "/admin/member",
+    },
+    {
       name: "Produk",
       href: "/admin/product",
       current: pathname === "/admin/product",

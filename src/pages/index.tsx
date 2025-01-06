@@ -186,7 +186,7 @@ export default function Index() {
           <h2 className="text-3xl font-semibold text-green-700">
             Solusi Dana Cepat Jaminan BPKB.
           </h2>
-          <p className="text-md lg:mt-4 mt-2 text-gray-700">
+          <p className="lg:text-md text-lg lg:mt-4 mt-2 text-gray-700">
             Kami akan membantu menemukan produk layanan pinjaman Gadai BPKB yang
             sesuai dengan kebutuhan Anda dengan cepat.
           </p>
@@ -200,21 +200,27 @@ export default function Index() {
           </Link>
         </div>
         <div className="w-full">
-          <h2 className="text-black text-md text-center">
+          <h2 className="text-black lg:text-md text-lg text-center">
             Untuk Berbagai Kebutuhan:
           </h2>
           <div className="w-full flex lg:flex-row flex-col gap-8 mt-2">
             <div className="p-2 rounded w-full shadow">
               <HomeIcon className="w-8 text-green-600" />
-              <h5 className="text-black mt-4">Pembiayaan Rumah</h5>
+              <h5 className="text-black mt-4 lg:text-md text-lg">
+                Pembiayaan Rumah
+              </h5>
             </div>
             <div className="p-2 rounded w-full shadow">
               <AcademicCapIcon className="w-8 text-green-600" />
-              <h5 className="text-black mt-4">Biaya Pendidikan</h5>
+              <h5 className="text-black mt-4 lg:text-md text-lg">
+                Biaya Pendidikan
+              </h5>
             </div>
             <div className="p-2 rounded w-full shadow">
               <ClipboardDocumentIcon className="w-8 text-green-600" />
-              <h5 className="text-black mt-4">Biaya Kesehatan</h5>
+              <h5 className="text-black mt-4 lg:text-md text-lg">
+                Biaya Kesehatan
+              </h5>
             </div>
           </div>
         </div>
@@ -229,32 +235,34 @@ export default function Index() {
         <h2 className="italic text-green-600 text-center font-bold text-lg">
           Sekilas Kami
         </h2>
-        <h5 className="text-black text-center font-bold text-4xl hidden">Leasfund</h5>
+        <h5 className="text-black text-center font-bold text-4xl hidden">
+          Leasfund
+        </h5>
         <div className="w-full flex lg:flex-row flex-col gap-4 justify-between items-center">
           <div className="w-full">
-            <img
+            {/* <img
               src="/images/logo_full2.png"
               alt="logo"
               className="w-[150px] h-auto absolute lg:top-40 top-20 lg:left-40 left-0"
-            />
+            /> */}
             <img
-              src="/images/woman-business.png"
+              src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2Flovepik-business-woman-cheering-png-image_401612457_wh1200-removebg-preview.png?alt=media&token=2fed1581-1825-4e79-8a59-ad7caa912bdd"
               alt="wmn"
-              className="w-full lg:h-[70vh] h-auto lg:ml-0"
+              className="w-[500px] lg:h-[70vh] h-auto lg:ml-20"
             />
           </div>
+
           <div className="w-full lg:pr-20 pr-0 lg:px-0 px-4">
             <p className="text-gray-800">
-              <strong>Leasfund</strong> adalah marketplace dan fasilitator yang membantu
-              masyarakat memperoleh produk pinjaman uang terbaik di Indonesia.
-              <br />
+              <strong>Leasfund</strong> adalah marketplace dan fasilitator yang
+              membantu masyarakat memperoleh produk pinjaman uang terbaik di
+              Indonesia.
               <br />
               Diisi oleh tim yang berpengalaman selama belasan tahun di dunia
               Leasing dan Multifinance, kami yakin bahwa Leasfund mampu membantu
               semua masalah finansial Anda. Perlu diketahui bahwa kami tidak
               sembarangan memilih partner Leasing dan wajib kami cek dan tes
               kelebihan serta kekurangan produk dari Leasing tersebut.
-              <br />
               <br />
               Hal tersebut kami lakukan demi kepuasan konsumen, sehingga kami
               tidak segan-segan memutus kerjasama dengan pihak Leasing apabila
@@ -270,7 +278,82 @@ export default function Index() {
             </Link>
           </div>
         </div>
+        <div className="w-full bg-white border-b-2 lg:mt-0 mt-4"></div>
       </div>
+
+      {/* Gadai BPKB Mobil */}
+      <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-end lg:gap-0 gap-6">
+        <div className="w-full border-r flex flex-col items-center">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2F304dbc_85ea9ebdc8b14046a699d573a4a24477~mv2.webp?alt=media&token=52883b07-5e11-4ff2-aaeb-9e8e60a04bee"
+            alt="motor"
+          />
+          <h2 className="text-center text-xl font-bold text-black">
+            Gadai BPKB Mobil
+          </h2>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">
+            Gadai BPKB Mobil Termudah dan Cepat Cair (Bunga Mulai 0.6%)
+          </p>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">
+            Min. 2006
+          </p>
+          <Link href={"pawn/car"}>
+            <button
+              type="button"
+              className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200"
+            >
+              Selengkapnya
+            </button>
+          </Link>
+        </div>
+        <div className="w-full border-l flex flex-col items-center">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2Fpng-clipart-scooter-yamaha-motor-company-motorcycle-yamaha-tmax-yamaha-nmax-yamaha-nmax-scooter-car-thumbnail-removebg-preview.png?alt=media&token=39808789-98e7-4e76-b264-22fdcd6f038e"
+            alt="motor"
+          />
+          <h2 className="text-center text-xl font-bold text-black">
+            Gadai BPKB Motor
+          </h2>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">
+            Tempat Gadai BPKB Motor Terpercaya & Aman (PROSES SUPER DUPER KILAT)
+          </p>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">
+            Min. 2012
+          </p>
+          <Link href={"pawn/motor"}>
+            <button
+              type="button"
+              className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200"
+            >
+              Selengkapnya
+            </button>
+          </Link>
+        </div>
+        <div className="w-full border-l flex flex-col items-center">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2Fmitsubishi-colt-300-dok-mitsubishi-3_169-removebg-preview.png?alt=media&token=555dc814-ff94-4b4e-8ecd-d571fc79e47e"
+            alt="motor"
+          />
+          <h2 className="text-center text-xl font-bold text-black">
+            Gadai BPKB Pick Up/Truk
+          </h2>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">
+            Gadai BPKB Pickup/Truk Termudah dan Cepat Cair (Bunga Mulai 0.6%)
+          </p>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">
+            Min. 2014
+          </p>
+          <Link href={"pawn/truck"}>
+            <button
+              type="button"
+              className="bg-blue-500 text-white py-2 px-4 rounded lg:mt-4 mt-2 hover:bg-blue-600 duration-200"
+            >
+              Selengkapnya
+            </button>
+          </Link>
+        </div>
+      </div>
+
       {/* Section 3 */}
       <div className="bg-white h-auto w-full lg:px-10 px-4 lg:py-20 py-14 flex lg:flex-row flex-col justify-center items-center">
         <h2

@@ -1,4 +1,3 @@
-import Modal from "@/components/admin/Modal";
 import { deleteArticle, getArticles } from "@/pages/api/article";
 import { IArticle } from "@/types/article";
 import axios from "axios";
@@ -11,12 +10,10 @@ export default function AdminArticle() {
   const [filter, setFilter] = useState<any>(router.query);
   const [products, setProducts] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [modal, setModal] = useState<any>({ open: false, key: "", data: "" });
-
   const getData = async () => {
     setLoading(true);
     try {
-      const result = await axios.get("/api/product/list");
+      const result = await axios.get("/api/customer/list");
       setProducts(result?.data?.items);
       setLoading(false);
     } catch (error) {
@@ -27,7 +24,7 @@ export default function AdminArticle() {
   const handleDelete = async (id: string) => {};
   const column: any = [
     {
-      name: "Nama Produk",
+      name: "Nama",
       selector: (row: any) => row.name,
       sortable: true,
     },
@@ -37,30 +34,18 @@ export default function AdminArticle() {
       sortable: true,
     },
     {
-      name: "Logo",
-      selector: (row: any) => (
-        <div className="py-2 w-auto">
-          <img src={row?.logo} alt="thumbnail" className="w-40 h-auto" />
-        </div>
-      ),
-    },
-    {
       name: "Aksi",
       selector: (row: any) => (
         <div className="flex gap-2">
           <button
             className="bg-blue-500 text-white py-2 px-4 rounded"
-            onClick={() =>
-              setModal({ ...modal, open: true, data: row, key: "update" })
-            }
+            onClick={() => router.push(`/admin/article/${row.id}/edit`)}
           >
             Edit
           </button>
           <button
             className="bg-red-500 text-white py-2 px-4 rounded"
-            onClick={() =>
-              setModal({ ...modal, open: true, data: row, key: "delete" })
-            }
+            onClick={() => handleDelete(row.id)}
           >
             Hapus
           </button>
@@ -82,25 +67,23 @@ export default function AdminArticle() {
   return (
     <div>
       <div>
-        <h1 className="text-2xl font-bold text-black text-left">Produk</h1>
+        <h1 className="text-2xl font-bold text-black text-left">Nasabah</h1>
         <div className="my-2">
           <input
             type="text"
-            placeholder="Cari Produk"
+            placeholder="Cari Nasabah"
             className="w-full border border-gray-300 rounded p-2 text-gray-800 focus:outline-none focus:border-gray-500"
             defaultValue={filter?.search || ""}
             onChange={(e) => setFilter({ ...filter, search: e.target.value })}
           />
         </div>
         <div className="my-2">
-          <button
+          {/* <button
             className="bg-green-700 hover:bg-green-600 text-white py-2 px-4 rounded duration-200"
-            onClick={() =>
-              setModal({ ...modal, open: true, data: null, key: "create" })
-            }
+            onClick={() => router.push("/admin/article/create")}
           >
             Tambah Produk
-          </button>
+          </button> */}
         </div>
       </div>
       {loading ? (
@@ -130,32 +113,6 @@ export default function AdminArticle() {
             />
           )}
         </>
-      )}
-      {modal.key == "update" || modal.key == "create" ? (
-        <Modal
-          isOpen={modal.open}
-          onClose={() => {
-            setModal({ ...modal, open: false });
-          }}
-          title={`${modal.key == "create" ? "Tambah" : "Ubah"} Data Produk`}
-        >
-          <div></div>
-        </Modal>
-      ) : (
-        ""
-      )}
-      {modal.key == "delete" ? (
-        <Modal
-          isOpen={modal.open}
-          onClose={() => {
-            setModal({ ...modal, open: false });
-          }}
-          title="Hapus Data Produk"
-        >
-          <div></div>
-        </Modal>
-      ) : (
-        ""
       )}
     </div>
   );
