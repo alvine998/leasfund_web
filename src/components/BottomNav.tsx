@@ -30,7 +30,7 @@ export default function BottomNav() {
               <li className="list-disc lg:mt-2 mt-0 hover:underline">
                 <Link
                   className="text-white lg:text-md text-xs"
-                  href={"/product/car"}
+                  href={"/pawn/car"}
                 >
                   Gadai BPKB Mobil
                 </Link>
@@ -38,9 +38,17 @@ export default function BottomNav() {
               <li className="list-disc lg:mt-2 mt-0 hover:underline">
                 <Link
                   className="text-white lg:text-md text-xs"
-                  href={"/product/motor"}
+                  href={"/pawn/motor"}
                 >
                   Gadai BPKB Motor
+                </Link>
+              </li>
+              <li className="list-disc lg:mt-2 mt-0 hover:underline">
+                <Link
+                  className="text-white lg:text-md text-xs"
+                  href={"/pawn/truck"}
+                >
+                  Gadai BPKB Truk
                 </Link>
               </li>
               <li className="list-disc lg:mt-2 mt-0 hover:underline">

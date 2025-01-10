@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import React from "react";
 import { Poppins } from "next/font/google";
 import PawnCar from "@/components/PawnCar";
+import PawnMotor from "@/components/PawnMotor";
 
 const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function PawnMotorPage() {
         </h1>
       </div>
       <div className="lg:mt-[25vh] md:mt-[5vh] mt-0">
-        <PawnCar />
+        <PawnMotor />
       </div>
       <BottomNav />
     </div>
