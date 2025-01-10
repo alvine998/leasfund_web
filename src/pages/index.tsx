@@ -1,11 +1,18 @@
 import BottomNav from "@/components/BottomNav";
 import Navbar from "@/components/Navbar";
 import {
+  BoltIcon,
+  BriefcaseIcon,
+  CheckBadgeIcon,
   ChevronUpIcon,
   ClipboardDocumentCheckIcon,
   ClipboardDocumentListIcon,
+  CurrencyDollarIcon,
+  DocumentCheckIcon,
   DocumentCurrencyDollarIcon,
+  PercentBadgeIcon,
   PhoneIcon,
+  Square3Stack3DIcon,
 } from "@heroicons/react/20/solid";
 import React, { useEffect, useState } from "react";
 import Steps from "@/components/Steps";
@@ -232,7 +239,7 @@ export default function Index() {
 
       {/* Sekilas */}
       <div className="bg-white w-full lg:py-10 py-10 relative shadow">
-        <h2 className="italic text-green-600 text-center font-bold text-lg">
+        <h2 className="italic text-green-700 text-center font-bold text-4xl">
           Sekilas Kami
         </h2>
         <h5 className="text-black text-center font-bold text-4xl hidden">
@@ -281,7 +288,7 @@ export default function Index() {
         <div className="w-full bg-white border-b-2 lg:mt-0 mt-4"></div>
       </div>
 
-      {/* Gadai BPKB Mobil */}
+      {/* Gadai BPKB */}
       <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-end lg:gap-0 gap-6">
         <div className="w-full border-r flex flex-col items-center">
           <img
@@ -294,9 +301,7 @@ export default function Index() {
           <p className="text-gray-600 text-xs lg:px-0 px-4">
             Gadai BPKB Mobil Termudah dan Cepat Cair (Bunga Mulai 0.6%)
           </p>
-          <p className="text-gray-600 text-xs lg:px-0 px-4">
-            Min. 2006
-          </p>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">Min. 2006</p>
           <Link href={"pawn/car"}>
             <button
               type="button"
@@ -317,9 +322,7 @@ export default function Index() {
           <p className="text-gray-600 text-xs lg:px-0 px-4">
             Tempat Gadai BPKB Motor Terpercaya & Aman (PROSES SUPER DUPER KILAT)
           </p>
-          <p className="text-gray-600 text-xs lg:px-0 px-4">
-            Min. 2012
-          </p>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">Min. 2012</p>
           <Link href={"pawn/motor"}>
             <button
               type="button"
@@ -340,9 +343,7 @@ export default function Index() {
           <p className="text-gray-600 text-xs lg:px-0 px-4">
             Gadai BPKB Pickup/Truk Termudah dan Cepat Cair (Bunga Mulai 0.6%)
           </p>
-          <p className="text-gray-600 text-xs lg:px-0 px-4">
-            Min. 2014
-          </p>
+          <p className="text-gray-600 text-xs lg:px-0 px-4">Min. 2014</p>
           <Link href={"pawn/truck"}>
             <button
               type="button"
@@ -351,6 +352,99 @@ export default function Index() {
               Selengkapnya
             </button>
           </Link>
+        </div>
+      </div>
+
+      {/* Alasan Pilih Kami */}
+      <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-end lg:px-20 px-0 ">
+        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start pt-20 gap-2 px-20 lg:h-[350px]">
+          <PercentBadgeIcon className="text-white w-14" />
+          <h2 className="text-2xl text-white font-bold">TANPA POTONGAN</h2>
+          <p className="text-white text-2xl mt-4 text-center">
+            Kamu Terima Dana Yang Dicairkan Full 100%
+          </p>
+        </div>
+        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start pt-20 gap-2 px-20 lg:h-[350px]">
+          <BriefcaseIcon className="text-white w-14" />
+          <h2 className="text-2xl text-white font-bold">PROSES CEPAT</h2>
+          <p className="text-white text-2xl mt-4 text-center">
+            Hanya Dalam 2 - 3 Hari
+          </p>
+        </div>
+        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start pt-20 gap-2 px-20 lg:h-[350px]">
+          <Square3Stack3DIcon className="text-white w-14" />
+          <h2 className="text-2xl text-white font-bold">TERPERCAYA</h2>
+          <p className="text-white text-2xl mt-4 text-center">
+            Sudah Lebih Dari 200 Cabang di Indonesia
+          </p>
+        </div>
+      </div>
+
+      {/* Kenapa Harus Leasfund */}
+      <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-start lg:gap-0 gap-6 lg:px-20 px-0">
+        <div className="w-full flex flex-col gap-4 items-center pt-4">
+          <h1 className="font-bold text-4xl text-black">
+            Kenapa Harus Leasfund Finance?
+          </h1>
+          <hr className="w-1/2 border-b-2 border-b-green-500" />
+          <h5 className="text-2xl text-black px-10 mt-5">
+            Leasfund Dapat Menjadi Solusi Tepat Dan Cepat Untuk Pinjaman Dana
+            Tunai Dengan Jaminan BPKB Kendaraan Motor, Mobil, Dan Truk. Untuk
+            Keperluan Anak Sekolah, Hari Raya, Renovasi Rumah, Kesehatan Dan
+            Sebagainya.
+          </h5>
+        </div>
+        <div className="w-full">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2FPeluang%20Bisnis.jpg?alt=media&token=27b3cd34-679a-4e8b-a6a9-d29f75a84485"
+            alt="illustartion"
+            className="w-full lg:h-[400px] h-auto"
+          />
+        </div>
+      </div>
+
+      {/* Isi Form */}
+      <div className="bg-white w-full lg:py-10 py-10 relative shadow flex flex-col items-center lg:gap-0 gap-6 lg:px-20 px-0">
+        <hr className="w-1/2 border-b-2 border-b-green-500" />
+        <div className="flex lg:flex-row flex-col justify-between items-start gap-8 mt-20 w-full">
+          <div className="flex flex-col gap-2 items-center w-full">
+            <ClipboardDocumentListIcon className="text-green-500 w-20" />
+            <h5 className="text-2xl font-semibold text-black">1. ISI FORM</h5>
+            <p className="text-lg text-black">
+              Kamu bisa isi form dengan klik ajukan sekarang
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-2 items-center w-full">
+            <CheckBadgeIcon className="text-green-500 w-20" />
+            <h5 className="text-2xl font-semibold text-black">
+              2. KONFIRMASI SURVEY
+            </h5>
+            <p className="text-lg text-black text-center">
+              Konfirmasi jadwal survey yang kamu mau dan bisa diatur waktunya
+              oleh tim survey
+            </p>
+          </div>
+        </div>
+
+        <div className="flex lg:flex-row flex-col justify-between items-start gap-8 mt-20 w-full">
+          <div className="flex flex-col gap-2 items-center w-full">
+            <ClipboardDocumentCheckIcon className="text-green-500 w-20" />
+            <h5 className="text-2xl font-semibold text-black">
+              3. VERIFIKASI DOKUMEN
+            </h5>
+            <p className="text-lg text-black">Verifikasi syarat dokumen</p>
+          </div>
+
+          <div className="flex flex-col gap-2 items-center w-full">
+            <CurrencyDollarIcon className="text-green-500 w-20" />
+            <h5 className="text-2xl font-semibold text-black">
+              4. PENCAIRAN DANA
+            </h5>
+            <p className="text-lg text-black text-center">
+              Setelah Acc dana akan cair
+            </p>
+          </div>
         </div>
       </div>
 
