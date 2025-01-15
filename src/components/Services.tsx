@@ -13,10 +13,10 @@ interface Props {
 export default function Services({ setFilter }: Props) {
   return (
     <div className="w-full">
-      <h5 className="lg:text-2xl text-xl text-black">
+      <h5 className="lg:text-2xl text-xl text-black font-bold">
         Solusi Mudah, Cepat, dan Aman untuk kebutuhan finansial Anda
       </h5>
-      <p className="mt-4 text-justify text-black lg:text-md text-sm">
+      <p className="mt-4 text-justify text-black lg:text-lg text-sm">
         Leasfund adalah solusi digital terpercaya untuk kebutuhan pembiayaan
         Anda. Kami menyediakan layanan leasing dan pinjaman pribadi yang
         dirancang untuk mendukung berbagai kebutuhan finansial Anda dengan

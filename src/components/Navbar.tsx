@@ -41,21 +41,21 @@ export default function Navbar() {
     <div>
       <div className="lg:block hidden">
         <div className="bg-white shadow md:h-[70px] w-full items-center px-20 flex fixed z-50 top-0">
-          <div>
+          <Link href={"/"}>
             <img
               src="/images/logo_full2.png"
               alt="logo"
               className="md:w-[100px] h-auto"
             />
-          </div>
-          <div className="flex gap-10 md:ml-48">
+          </Link>
+          <div className="flex gap-5 md:ml-48">
             {navs?.map((val: { name: string; href: string }, i: number) => (
               <a
                 key={i}
                 className={`uppercase transition-all text-sm duration-200 font-sans ${
                   pathname == val?.href
                     ? `text-black font-bold ${poppinsBold.className}`
-                    : `hover:text-green-500 text-black ${poppinsRegular.className}`
+                    : `hover:text-green-500 text-black font-thin ${poppinsRegular.className}`
                 }`}
                 href={val?.href}
               >
@@ -149,7 +149,9 @@ export default function Navbar() {
                 </div>
                 <Link href={"/aboutus"}>
                   <p
-                    className={`text-black text-xl z-50 relative ${isOpen ? "-mt-0" : "-mt-4"} ${
+                    className={`text-black text-xl z-50 relative ${
+                      isOpen ? "-mt-0" : "-mt-4"
+                    } ${
                       pathname == "/aboutus"
                         ? "p-2 text-white bg-green-500 rounded"
                         : ""

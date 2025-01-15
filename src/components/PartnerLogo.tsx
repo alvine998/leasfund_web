@@ -6,7 +6,7 @@ const poppinsBold = Poppins({ weight: "700", subsets: ["latin"] });
 export default function PartnerLogo() {
   return (
     <div>
-      <h2 className={`${poppinsBold} text-black text-lg text-center font-bold`}>
+      <h2 className={`${poppinsBold} text-black lg:text-2xl text-lg text-center font-bold`}>
         MITRA
       </h2>
       <div className="overflow-hidden">

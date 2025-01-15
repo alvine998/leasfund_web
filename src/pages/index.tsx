@@ -13,6 +13,7 @@ import {
   PercentBadgeIcon,
   PhoneIcon,
   Square3Stack3DIcon,
+  XCircleIcon,
 } from "@heroicons/react/20/solid";
 import React, { useEffect, useState } from "react";
 import Steps from "@/components/Steps";
@@ -28,6 +29,7 @@ import {
   HomeIcon,
 } from "@heroicons/react/24/outline";
 import AutoSlide from "@/components/AutoSlide";
+import Accordion from "@/components/Accordion";
 
 type RangeItem = {
   [key: string]: {
@@ -48,7 +50,9 @@ type MonthsData = {
 export default function Index() {
   const [filter, setFilter] = useState<string>("");
   const [type, setType] = useState<string>("car");
+  const [activeIndex, setActiveIndex] = useState(null);
   const [rangeValue, setRangeValue] = useState<number>(20000000);
+  const [modal, setModal] = useState<boolean>(true);
   const ranges: RangeItem[] = [
     {
       car: {
@@ -125,6 +129,44 @@ export default function Index() {
       ],
     },
   ];
+
+  const faqs = [
+    {
+      title: "Apa itu Kredit Multiguna?",
+      content: `
+        Salah satu produk pemberian pinjaman uang dengan agunan atau jaminan sebagai syarat yang harus dipenuhi. Besarnya pinjaman, 
+        disesuaikan nilai barang yang dijaminkan. Semakin besar nilai jaminannya, maka semakin besar pula Anda memperoleh pinjamannya.
+        `,
+    },
+    {
+      title: "Berapa nilai mobil saya yang dapat saya pinjam?",
+      content: `
+        Anda dapat meminjam hingga 85% dari nilai taksiran mobil Anda melalui layanan kami.
+        `,
+    },
+    {
+      title: "Dokumen apa yang saya perlukan untuk mengajukan pinjaman?",
+      content: `
+          Anda memerlukan KTP, KTP Pasangan, Kartu Keluarga dan STNK
+          `,
+    },
+    {
+      title:
+        "Berapa lama waktu yang dibutuhkan untuk menerima persetujuan pinjaman dan dana?",
+      content: `
+          Setelah semua dokumen yang dibutuhkan diserahkan, persetujuan pinjaman biasanya 
+          memakan waktu 2-3 hari kerja. Setelah disetujui, dana akan segera dicairkan.
+            `,
+    },
+    {
+      title:
+        "Apakah saya tetap dapat menggunakan kendaraan saya saat dijadikan agunan pinjaman?",
+      content: `
+          Ya, Anda dapat menyimpan dan menggunakan kendaraan Anda selama masa pinjaman. 
+          Pemodal hanya menahan BPKB sebagai agunan.
+            `,
+    },
+  ];
   // const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // const toggleDropdown = () => setIsOpen(!isOpen);
@@ -155,8 +197,48 @@ export default function Index() {
   ];
 
   return (
-    <div className="w-full">
+    <div className={`w-full ${modal ? "overflow-hidden" : ""}`}>
       <Navbar />
+      {modal ? (
+        <div>
+          <div className="h-[100vh] w-full fixed top-0 left-0 z-[999] bg-gray-500 opacity-35 ">
+            {/* <div className="h-[80vh] w-full bg-green-600 opacity-100 absolute"></div> */}
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="bg-blue-700 h-[80vh] lg:w-1/3 md:w-[500px] w-[320px] rounded p-4 fixed top-10 lg:left-1/3 md:left-1/4 left-5 right-0 z-[9999]">
+              <div className="flex justify-between items-center pt-4">
+                <h5 className="text-2xl font-bold">PENGUMUMAN</h5>
+                <button onClick={() => setModal(false)}>
+                  <XCircleIcon className="w-8 text-yellow-500" />
+                </button>
+              </div>
+              <p className="text-lg text-white lg:mt-10 mt-10">
+                Kami menghimbau untuk <strong>WASPADA</strong> terhadap segala
+                bentuk informasi yang mengatasnamakan PT Leasfund Teknologi
+                Solusi (Leasfund).
+                <br />
+                <br />
+                Cek kebenaran informasi yang anda terima melalui kontak resmi
+                kami:
+                <br />
+                <br />
+                <strong className="italic">Whatsapp: 0858-6395-3727</strong>
+                <br />
+                <strong className="italic">Email: layanan@leasfund.com</strong>
+              </p>
+              <div className="lg:mt-12 mt-9">
+                <img
+                  src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-customer-care-asistance-png-image_10208998.png"
+                  alt="cs"
+                  className="lg:w-[150px] lg:h-[150px] w-[125px] h-[125px]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="fixed bottom-4 left-4 z-[999]">
         <Link href={`https://wa.me/6285863953727`} target="_blank">
           <button
@@ -239,7 +321,7 @@ export default function Index() {
 
       {/* Sekilas */}
       <div className="bg-white w-full lg:py-10 py-10 relative shadow">
-        <h2 className="italic text-green-700 text-center font-bold text-4xl">
+        <h2 className="italic text-green-700 text-center font-bold text-6xl">
           Sekilas Kami
         </h2>
         <h5 className="text-black text-center font-bold text-4xl hidden">
@@ -260,7 +342,7 @@ export default function Index() {
           </div>
 
           <div className="w-full lg:pr-20 pr-0 lg:px-0 px-4">
-            <p className="text-gray-800">
+            <p className="text-gray-800 text-xl">
               <strong>Leasfund</strong> adalah marketplace dan fasilitator yang
               membantu masyarakat memperoleh produk pinjaman uang terbaik di
               Indonesia.
@@ -288,12 +370,41 @@ export default function Index() {
         <div className="w-full bg-white border-b-2 lg:mt-0 mt-4"></div>
       </div>
 
+      {/* Layanan */}
+      <div className="bg-white h-auto w-full lg:px-10 px-4 lg:py-20 py-14 flex lg:flex-row flex-col justify-center items-center">
+        <h2
+          className={`lg:-mt-0 -mt-10 text-4xl w-1/2 font-semibold text-center duration-500 transition-opacity text-green-700`}
+        >
+          Layanan Leasfund
+        </h2>
+        <div className={`lg:-mt-0 mt-5 duration-500 transition-opacity w-full`}>
+          {filter == "" ? <Services setFilter={setFilter} /> : ""}
+
+          {filter == "simulation" ? (
+            <Simulation
+              setFilter={setFilter}
+              idx={idx}
+              setIdx={setIdx}
+              list={list}
+              setList={setList}
+              rangeValue={rangeValue}
+              setRangeValue={setRangeValue}
+              ranges={ranges}
+              type={type}
+              setType={setType}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
+
       {/* Gadai BPKB */}
       <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-end lg:gap-0 gap-6">
         <div className="w-full border-r flex flex-col items-center">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2F304dbc_85ea9ebdc8b14046a699d573a4a24477~mv2.webp?alt=media&token=52883b07-5e11-4ff2-aaeb-9e8e60a04bee"
-            alt="motor"
+            alt="car"
           />
           <h2 className="text-center text-xl font-bold text-black">
             Gadai BPKB Mobil
@@ -335,7 +446,7 @@ export default function Index() {
         <div className="w-full border-l flex flex-col items-center">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2Fmitsubishi-colt-300-dok-mitsubishi-3_169-removebg-preview.png?alt=media&token=555dc814-ff94-4b4e-8ecd-d571fc79e47e"
-            alt="motor"
+            alt="truck"
           />
           <h2 className="text-center text-xl font-bold text-black">
             Gadai BPKB Pick Up/Truk
@@ -355,39 +466,14 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Alasan Pilih Kami */}
-      <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-end lg:px-20 px-0 ">
-        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start pt-20 gap-2 px-20 lg:h-[350px]">
-          <PercentBadgeIcon className="text-white w-14" />
-          <h2 className="text-2xl text-white font-bold">TANPA POTONGAN</h2>
-          <p className="text-white text-2xl mt-4 text-center">
-            Kamu Terima Dana Yang Dicairkan Full 100%
-          </p>
-        </div>
-        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start pt-20 gap-2 px-20 lg:h-[350px]">
-          <BriefcaseIcon className="text-white w-14" />
-          <h2 className="text-2xl text-white font-bold">PROSES CEPAT</h2>
-          <p className="text-white text-2xl mt-4 text-center">
-            Hanya Dalam 2 - 3 Hari
-          </p>
-        </div>
-        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start pt-20 gap-2 px-20 lg:h-[350px]">
-          <Square3Stack3DIcon className="text-white w-14" />
-          <h2 className="text-2xl text-white font-bold">TERPERCAYA</h2>
-          <p className="text-white text-2xl mt-4 text-center">
-            Sudah Lebih Dari 200 Cabang di Indonesia
-          </p>
-        </div>
-      </div>
-
       {/* Kenapa Harus Leasfund */}
       <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-start lg:gap-0 gap-6 lg:px-20 px-0">
         <div className="w-full flex flex-col gap-4 items-center pt-4">
-          <h1 className="font-bold text-4xl text-black">
+          <h1 className="font-bold text-4xl text-black lg:text-left text-center">
             Kenapa Harus Leasfund Finance?
           </h1>
           <hr className="w-1/2 border-b-2 border-b-green-500" />
-          <h5 className="text-2xl text-black px-10 mt-5">
+          <h5 className="lg:text-2xl text-lg text-black px-10 mt-5">
             Leasfund Dapat Menjadi Solusi Tepat Dan Cepat Untuk Pinjaman Dana
             Tunai Dengan Jaminan BPKB Kendaraan Motor, Mobil, Dan Truk. Untuk
             Keperluan Anak Sekolah, Hari Raya, Renovasi Rumah, Kesehatan Dan
@@ -400,6 +486,37 @@ export default function Index() {
             alt="illustartion"
             className="w-full lg:h-[400px] h-auto"
           />
+        </div>
+      </div>
+
+      {/* Alasan Pilih Kami */}
+      <div className="bg-white w-full lg:py-10 py-10 relative shadow flex lg:flex-row flex-col items-end lg:px-20 px-0 ">
+        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start lg:pt-20 py-10 gap-2 lg:px-20 px-10 lg:h-[350px] lg:border-b-0 border-b-2 lg:border-r-2 border-r-0">
+          <PercentBadgeIcon className="text-white w-14" />
+          <h2 className="text-2xl text-white font-bold lg:text-left text-center">
+            TANPA POTONGAN
+          </h2>
+          <p className="text-white text-2xl mt-4 text-center">
+            Kamu Terima Dana Yang Dicairkan Full 100%
+          </p>
+        </div>
+        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start lg:pt-20 py-10 gap-2 lg:px-20 px-10 lg:h-[350px] lg:border-b-0 border-b-2 lg:border-r-2 border-r-0">
+          <BriefcaseIcon className="text-white w-14" />
+          <h2 className="text-2xl text-white font-bold lg:text-left text-center">
+            PROSES CEPAT
+          </h2>
+          <p className="text-white text-2xl mt-4 text-center">
+            Hanya Dalam 2 - 3 Hari
+          </p>
+        </div>
+        <div className="w-full bg-green-600 shadow h-auto p-4 flex flex-col items-center justify-start lg:pt-20 py-10 gap-2 lg:px-20 px-10 lg:h-[350px] lg:border-b-0 border-b-2 lg:border-r-2 border-r-0">
+          <Square3Stack3DIcon className="text-white w-14" />
+          <h2 className="text-2xl text-white font-bold lg:text-left text-center">
+            TERPERCAYA
+          </h2>
+          <p className="text-white text-2xl mt-4 text-center">
+            Sudah Lebih Dari 200 Cabang di Indonesia
+          </p>
         </div>
       </div>
 
@@ -448,45 +565,43 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Section 3 */}
-      <div className="bg-white h-auto w-full lg:px-10 px-4 lg:py-20 py-14 flex lg:flex-row flex-col justify-center items-center">
-        <h2
-          className={`lg:-mt-0 -mt-10 text-4xl w-full font-semibold text-center duration-500 transition-opacity text-green-700`}
-        >
-          Layanan Leasfund
-        </h2>
-        <div className={`lg:-mt-0 mt-5 duration-500 transition-opacity w-full`}>
-          {filter == "" ? <Services setFilter={setFilter} /> : ""}
-
-          {filter == "simulation" ? (
-            <Simulation
-              setFilter={setFilter}
-              idx={idx}
-              setIdx={setIdx}
-              list={list}
-              setList={setList}
-              rangeValue={rangeValue}
-              setRangeValue={setRangeValue}
-              ranges={ranges}
-              type={type}
-              setType={setType}
-            />
-          ) : (
-            ""
-          )}
-        </div>
-      </div>
       {/* Section 4 */}
-      <div className="bg-white w-full h-auto lg:py-10 py-5 px-5 lg:p-10">
+      {/* <div className="bg-white w-full h-auto lg:py-10 py-5 px-5 lg:p-10">
         <h2 className="text-center text-xl font-bold text-black">
           Langkah-Langkah Mudah Pengajuan Pinjaman
         </h2>
         <div className="mt-8">
           <Steps data={descData} />
         </div>
+      </div> */}
+
+      {/* FAQ */}
+      <div className="bg-gray-50 flex items-center justify-center w-full border-t-2 pt-10 lg:px-20 px-0">
+        <div>
+          <h1 className="text-2xl font-bold text-center mb-6 text-black">
+            FAQ
+          </h1>
+          <Accordion
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+            items={faqs}
+            from={"faq"}
+          />
+        </div>
       </div>
+
+      {/* Maps */}
+      <div className="bg-white w-full lg:px-10 px-4 lg:py-20 py-4 flex flex-col gap-2 justify-center items-center relative">
+        <img
+          src="https://i0.wp.com/awantunai.co.id/wp-content/uploads/elementor/thumbs/september-peta-new-area-2024-AwanTunai-01-1-qudmz4ycn7c6ik5edv7np0ndjrihlo9ib5bjuosoae.png?ssl=1"
+          alt="maps"
+          className="w-full lg:h-[600px]"
+        />
+        <div className="absolute bottom-5 right-60 bg-white lg:w-[600px] lg:h-[200px]"></div>
+      </div>
+
       {/* Section 5 */}
-      <div className="bg-white w-full lg:px-10 px-4 lg:py-10 py-4 flex flex-col gap-2 justify-center items-center relative">
+      <div className="bg-white w-full lg:px-10 px-4 lg:py-20 py-4 flex flex-col gap-2 justify-center items-center relative">
         <PartnerLogo />
       </div>
       <BottomNav />
