@@ -205,7 +205,7 @@ export default function Index() {
             {/* <div className="h-[80vh] w-full bg-green-600 opacity-100 absolute"></div> */}
           </div>
           <div className="flex items-center justify-center">
-            <div className="bg-blue-700 h-[80vh] lg:w-1/3 md:w-[500px] w-[320px] rounded p-4 fixed top-10 lg:left-1/3 md:left-1/4 left-5 right-0 z-[9999]">
+            <div className="bg-blue-700 h-[80vh] lg:w-1/3 md:w-[500px] w-full rounded p-4 fixed top-10 lg:left-1/3 md:left-1/4 left-0 right-0 z-[9999]">
               <div className="flex justify-between items-center pt-4">
                 <h5 className="text-2xl font-bold">PENGUMUMAN</h5>
                 <button onClick={() => setModal(false)}>
@@ -226,7 +226,7 @@ export default function Index() {
                 <br />
                 <strong className="italic">Email: layanan@leasfund.com</strong>
               </p>
-              <div className="lg:mt-12 mt-9">
+              <div className="absolute bottom-0 left-0">
                 <img
                   src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-customer-care-asistance-png-image_10208998.png"
                   alt="cs"

@@ -10,7 +10,7 @@ export default function PawnCarPage() {
   return (
     <div>
       <Navbar />
-      <div className="bg-white w-full flex justify-center items-center relative lg:mt-10">
+      <div className="bg-white w-full flex justify-center items-center relative pt-24">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2F304dbc_85ea9ebdc8b14046a699d573a4a24477~mv2.webp?alt=media&token=52883b07-5e11-4ff2-aaeb-9e8e60a04bee"
           alt="car"

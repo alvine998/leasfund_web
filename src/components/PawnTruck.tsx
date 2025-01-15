@@ -3,7 +3,7 @@ import PartnerLogo from "./PartnerLogo";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 
-export default function PawnCar() {
+export default function PawnTruck() {
   const datas = [
     <p key={"1"} className="text-black">
       Tidak perlu membuang waktu untuk datang ke kantor cabang dan mengantri
