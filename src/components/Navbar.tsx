@@ -48,7 +48,7 @@ export default function Navbar() {
               className="md:w-[100px] h-auto"
             />
           </Link>
-          <div className="flex gap-5 md:ml-48">
+          <div className="flex gap-5 md:ml-32">
             {navs?.map((val: { name: string; href: string }, i: number) => (
               <a
                 key={i}

@@ -597,7 +597,6 @@ export default function Index() {
           alt="maps"
           className="w-full lg:h-[600px]"
         />
-        <div className="absolute bottom-5 right-60 bg-white lg:w-[600px] lg:h-[200px]"></div>
       </div>
 
       {/* Section 5 */}
