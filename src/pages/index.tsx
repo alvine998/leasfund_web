@@ -207,7 +207,7 @@ export default function Index() {
           <div className="flex items-center justify-center">
             <div className="bg-blue-700 h-[80vh] lg:w-1/3 md:w-[500px] w-full rounded p-4 fixed top-10 lg:left-1/3 md:left-1/4 left-0 right-0 z-[9999]">
               <div className="flex justify-between items-center pt-4">
-                <h5 className="text-2xl font-bold">PENGUMUMAN</h5>
+                <h5 className="text-2xl font-bold text-white">PENGUMUMAN</h5>
                 <button onClick={() => setModal(false)}>
                   <XCircleIcon className="w-8 text-yellow-500" />
                 </button>
@@ -593,7 +593,7 @@ export default function Index() {
       {/* Maps */}
       <div className="bg-white w-full lg:px-10 px-4 lg:py-20 py-4 flex flex-col gap-2 justify-center items-center relative">
         <img
-          src="https://i0.wp.com/awantunai.co.id/wp-content/uploads/elementor/thumbs/september-peta-new-area-2024-AwanTunai-01-1-qudmz4ycn7c6ik5edv7np0ndjrihlo9ib5bjuosoae.png?ssl=1"
+          src="https://firebasestorage.googleapis.com/v0/b/leasefund.appspot.com/o/images%2Fseptember-peta-new-area-2024-AwanTunai-01-1-qudmz4ycn7c6ik5edv7np0ndjrihlo9ib5bjuosoae%20(1).png?alt=media&token=2a5f8c8d-05cd-46f8-a462-9f1731f5ed3a"
           alt="maps"
           className="w-full lg:h-[600px]"
         />
